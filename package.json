@@ -1,0 +1,41 @@
+{
+	"name": "my-vue-app",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"start": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"format": "prettier --write 'src/**/*.{ts,tsx,json,mdx,js,mjs,jsx,css,scss}'",
+		"lint-and-format": "yarn lint && yarn format",
+		"lint": "eslint 'src/**/*.{jsx}'"
+	},
+	"dependencies": {
+		"prettier": "^3.3.3",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"sass": "^1.77.8",
+		"sonner": "^1.5.0",
+		"vite-plugin-svgr": "^4.2.0"
+	},
+	"devDependencies": {
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"@typescript-eslint/eslint-plugin": "^7.15.0",
+		"@typescript-eslint/parser": "^7.15.0",
+		"@vitejs/plugin-react": "^4.3.1",
+		"eslint": "^9.8.0",
+		"eslint-plugin-react-hooks": "^4.6.2",
+		"eslint-plugin-react-refresh": "^0.4.7",
+		"typescript": "^5.2.2",
+		"vite": "^5.3.4"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	}
+}
+
