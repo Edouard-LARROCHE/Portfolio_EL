@@ -1,0 +1,16 @@
+.leftPart {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 55%;
+	height: 100%;
+	color: yellow;
+	z-index: 1;
+	background: linear-gradient(
+		100deg,
+		rgba(6, 6, 11, 1) 0%,
+		rgba(20, 11, 52, 1) 81%,
+		rgba(43, 38, 65, 1) 100%
+	);
+}
+
