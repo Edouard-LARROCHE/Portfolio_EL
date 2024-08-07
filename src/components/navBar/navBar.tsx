@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import { useState, useRef } from "react"
 
 import type { Button } from "./types"
 
@@ -46,7 +46,7 @@ const NavBar = () => {
 				<div className="name">Edouard Lrc</div>
 				<div
 					id="firstButton"
-					className="containerButton"
+					className={`containerButton ${isPopupOpen.firstButton ? "open" : ""}`}
 					onClick={() => handleClickClosePopup("firstButton")}
 					onMouseEnter={() => handleDisplayPopup("firstButton", true)}
 					onMouseLeave={() =>
@@ -61,7 +61,7 @@ const NavBar = () => {
 					</div>
 					{isPopupOpen.firstButton && (
 						<Popup
-							text=""
+							target="withMe"
 							size="large"
 							onMouseEnter={() =>
 								handleDisplayPopup("firstButton", true)
@@ -74,7 +74,7 @@ const NavBar = () => {
 				</div>
 				<div
 					id="secondButton"
-					className="containerButton"
+					className={`containerButton ${isPopupOpen.secondButton ? "open" : ""}`}
 					onClick={() => handleClickClosePopup("secondButton")}
 					onMouseEnter={() =>
 						handleDisplayPopup("secondButton", true)
@@ -91,7 +91,7 @@ const NavBar = () => {
 					</div>
 					{isPopupOpen.secondButton && (
 						<Popup
-							text=""
+							target="projects"
 							size="medium"
 							onMouseEnter={() =>
 								handleDisplayPopup("secondButton", true)
@@ -104,7 +104,7 @@ const NavBar = () => {
 				</div>
 				<div
 					id="thirdButton"
-					className="containerButton"
+					className={`containerButton ${isPopupOpen.thirdButton ? "open" : ""}`}
 					onClick={() => handleClickClosePopup("thirdButton")}
 					onMouseEnter={() => handleDisplayPopup("thirdButton", true)}
 					onMouseLeave={() =>
@@ -119,7 +119,7 @@ const NavBar = () => {
 					</div>
 					{isPopupOpen.thirdButton && (
 						<Popup
-							text=""
+							target="shared"
 							size="medium"
 							onMouseEnter={() =>
 								handleDisplayPopup("thirdButton", true)
