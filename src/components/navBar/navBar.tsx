@@ -63,6 +63,7 @@ const NavBar = () => {
 						<Popup
 							target="withMe"
 							size="large"
+							stopPropagation={(e) => e.stopPropagation()}
 							onMouseEnter={() =>
 								handleDisplayPopup("firstButton", true)
 							}
@@ -93,6 +94,7 @@ const NavBar = () => {
 						<Popup
 							target="projects"
 							size="medium"
+							stopPropagation={(e) => e.stopPropagation()}
 							onMouseEnter={() =>
 								handleDisplayPopup("secondButton", true)
 							}
@@ -121,6 +123,7 @@ const NavBar = () => {
 						<Popup
 							target="shared"
 							size="medium"
+							stopPropagation={(e) => e.stopPropagation()}
 							onMouseEnter={() =>
 								handleDisplayPopup("thirdButton", true)
 							}

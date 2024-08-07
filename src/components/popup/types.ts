@@ -3,5 +3,6 @@ export type PopupProps = {
 	size: "small" | "medium" | "large"
 	onMouseEnter: () => void
 	onMouseLeave: () => void
+	stopPropagation: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }
 
