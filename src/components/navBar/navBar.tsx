@@ -36,7 +36,7 @@ const NavBar = () => {
 	const handleClickClosePopup = (button: Button) => {
 		setIsPopupOpen((prevState) => ({
 			...prevState,
-			[button]: isPopupOpen[button] ? false : true,
+			[button]: !isPopupOpen[button],
 		}))
 	}
 
@@ -94,10 +94,10 @@ const NavBar = () => {
 							text=""
 							size="medium"
 							onMouseEnter={() =>
-								handleDisplayPopup("firstButton", true)
+								handleDisplayPopup("secondButton", true)
 							}
 							onMouseLeave={() =>
-								handleDisplayPopup("firstButton", false)
+								handleDisplayPopup("secondButton", false)
 							}
 						/>
 					)}
@@ -122,10 +122,10 @@ const NavBar = () => {
 							text=""
 							size="medium"
 							onMouseEnter={() =>
-								handleDisplayPopup("firstButton", true)
+								handleDisplayPopup("thirdButton", true)
 							}
 							onMouseLeave={() =>
-								handleDisplayPopup("firstButton", false)
+								handleDisplayPopup("thirdButton", false)
 							}
 						/>
 					)}

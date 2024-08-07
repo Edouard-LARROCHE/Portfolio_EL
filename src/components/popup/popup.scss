@@ -1,9 +1,10 @@
 @use "../../scss/config/primitives" as *;
 
 .containerPopup {
+	cursor: default;
 	position: absolute;
 	top: 3.4rem;
-	left: 0;
+	left: -1rem;
 	background-color: $drak-blue;
 	display: flex;
 	align-items: center;
@@ -14,6 +15,11 @@
 	&.large {
 		width: 80rem;
 		height: 40rem;
+	}
+
+	&.medium {
+		width: 60rem;
+		height: 30rem;
 	}
 }
 

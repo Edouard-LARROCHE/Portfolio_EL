@@ -1,10 +1,7 @@
 .leftPart {
-	position: fixed;
-	top: 0;
-	left: 0;
+	position: relative;
 	width: 55%;
 	height: 100%;
-	color: yellow;
 	z-index: 1;
 	background: linear-gradient(
 		90deg,

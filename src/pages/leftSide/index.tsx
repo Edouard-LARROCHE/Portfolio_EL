@@ -2,6 +2,7 @@ import React from "react"
 
 import Title from "../../components/title/title"
 import NavBar from "../../components/navBar/navBar"
+import CopyRight from "../../components/copyRight"
 
 import "./index.scss"
 
@@ -10,6 +11,7 @@ const LeftSide = () => {
 		<div className="leftPart">
 			<NavBar />
 			<Title />
+			<CopyRight />
 		</div>
 	)
 }
