@@ -1,0 +1,18 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <rect fill="transparent" />
+
+  <circle cx="100" cy="100" r="1" fill="white" />
+  <circle cx="200" cy="150" r="3" fill="white" />
+  <circle cx="300" cy="80" r="3" fill="white" />
+  <circle cx="400" cy="200" r="3" fill="white" />
+  <circle cx="500" cy="120" r="3" fill="white" />
+  <circle cx="600" cy="180" r="3" fill="white" />
+  <circle cx="700" cy="100" r="3" fill="white" />
+
+  <line x1="100" y1="100" x2="200" y2="150" stroke="white" stroke-width=".2" />
+  <line x1="200" y1="150" x2="300" y2="80" stroke="white" stroke-width="1" />
+  <line x1="300" y1="80" x2="400" y2="200" stroke="white" stroke-width="1" />
+  <line x1="400" y1="200" x2="500" y2="120" stroke="white" stroke-width="1" />
+  <line x1="500" y1="120" x2="600" y2="180" stroke="white" stroke-width="1" />
+  <line x1="600" y1="180" x2="700" y2="100" stroke="white" stroke-width="1" />
+</svg>

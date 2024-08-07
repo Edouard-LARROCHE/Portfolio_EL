@@ -11,6 +11,7 @@
 	justify-content: center;
 	border-radius: 0.6rem;
 	border: 0.02rem solid $grey-grey;
+	padding: 2rem;
 
 	&.large {
 		width: 80rem;
@@ -20,6 +21,61 @@
 	&.medium {
 		width: 60rem;
 		height: 30rem;
+	}
+
+	.popupContainerContent {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 1rem;
+		width: 100%;
+		height: 100%;
+		padding: 1rem;
+
+		.contentLeft {
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		.contentRight {
+			grid-column: 2;
+			grid-row: 1;
+		}
+
+		.title {
+			font-size: 1.1rem;
+			font-weight: 500;
+			color: $grey-light;
+			letter-spacing: 0.05rem;
+		}
+
+		ul {
+			li {
+				display: flex;
+				align-items: center;
+
+				.iconUseCase {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 4.5rem;
+					height: 4.5rem;
+					border-radius: 50%;
+					background-color: $blue-lagoon;
+					margin-bottom: 1rem;
+
+					svg {
+						width: 2.5rem;
+						height: 2.5rem;
+
+						path {
+							fill: $white;
+							opacity: 0.8;
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
