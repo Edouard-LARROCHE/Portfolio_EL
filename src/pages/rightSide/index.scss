@@ -1,4 +1,5 @@
 @use "../../scss/config/primitives" as *;
+@use "../../scss/config/functions" as *;
 
 .rightPart {
 	position: absolute;
@@ -12,7 +13,6 @@
 		display: flex;
 		justify-content: center;
 		width: 100%;
-		height: 100%;
 		margin-top: 2rem;
 
 		.buttonContainer {
@@ -23,6 +23,32 @@
 			padding: 0.2rem;
 			background-color: $black-smouth;
 			border-radius: 0.7rem;
+		}
+	}
+
+	.measureContainer {
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 0;
+		left: convertToREM(0);
+		width: convertToREM(1);
+		height: 100%;
+		background-color: $blue-sky-space;
+		opacity: 0.5;
+
+		.linesWrapper {
+			position: absolute;
+			left: convertToREM(-10);
+
+			.line {
+				margin: 0.6rem 0;
+				width: convertToREM(10);
+				height: convertToREM(1);
+				background-color: $white;
+				opacity: 0.2;
+			}
 		}
 	}
 }
