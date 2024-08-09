@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-import { getGithubProfile } from "../../services/services"
+import { getGithubProfile, getGithubRepos } from "../../services/services"
 
 import Title from "../../components/title/title"
 import NavBar from "../../components/navBar/navBar"
@@ -13,12 +13,19 @@ import "./index.scss"
 
 const LeftSide = () => {
 	const [profile, setProfile] = useState(null)
+	const [repos, setRepos] = useState(null)
+	const [loadingData, setLoadingData] = useState(true)
+	const [loadingRepos, setLoadingRepos] = useState(true)
 
 	useEffect(() => {
 		getGithubProfile().then((profile) => {
 			setProfile(profile)
+			setLoadingData(false)
+		})
 
-			console.log(profile)
+		getGithubRepos().then((repos) => {
+			setRepos(repos)
+			setLoadingRepos(false)
 		})
 	}, [])
 
@@ -29,7 +36,12 @@ const LeftSide = () => {
 				<ConstellationSVG />
 			</div>
 			<Title />
-			<FooterData data={profile} />
+			<FooterData
+				data={profile}
+				loadingData={loadingData}
+				loadingRepos={loadingRepos}
+				repos={repos}
+			/>
 			<CopyRight />
 		</div>
 	)

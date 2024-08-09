@@ -1,7 +1,7 @@
-export const getGithubProfile = async () => {
-	const GITHUB_TOKEN = import.meta.env.VITE_API_GITHUB_TOKEN
-	const URL = import.meta.env.VITE_API_GITHUB_URL
+const GITHUB_TOKEN = import.meta.env.VITE_API_GITHUB_TOKEN
+const URL = import.meta.env.VITE_API_GITHUB_URL
 
+export const getGithubProfile = async () => {
 	const profile = await fetch(`${URL}/user`, {
 		headers: {
 			Authorization: `token ${GITHUB_TOKEN}`,
@@ -12,8 +12,6 @@ export const getGithubProfile = async () => {
 }
 
 export const getGithubRepos = async () => {
-	const GITHUB_TOKEN = import.meta.env.VITE_API_GITHUB_TOKEN
-
 	const repos = await fetch(`${URL}/user/repos`, {
 		headers: {
 			Authorization: `token ${GITHUB_TOKEN}`,
