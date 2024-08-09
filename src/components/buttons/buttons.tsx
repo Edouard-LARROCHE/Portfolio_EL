@@ -1,21 +1,18 @@
-import { useState } from "react"
-
 import type { ButtonsProps } from "./types"
 
 import "./buttons.scss"
 
-const Buttons = ({ key, color, text }: ButtonsProps) => {
-	const [active, setActive] = useState(false)
-
-	const handleClick = (key: number) => {
-		setActive(key === key)
-	}
-
+const Buttons = ({
+	color,
+	text,
+	isActive,
+	onClick,
+}: ButtonsProps & { isActive: boolean; onClick: () => void }) => {
 	return (
 		<div className={`buttons ${color}`}>
 			<button
-				className={`button ${active ? "active" : ""}`}
-				onClick={() => handleClick(key)}
+				className={`button ${isActive ? "active" : ""}`}
+				onClick={onClick}
 			>
 				<span className="buttonText">{text}</span>
 			</button>
