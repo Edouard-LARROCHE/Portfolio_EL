@@ -1,5 +1,5 @@
 export type PopupProps = {
-	target: "withMe" | "projects" | "shared"
+	target: "withMe" | "discover" | "shared"
 	size: "small" | "medium" | "large"
 	onMouseEnter: () => void
 	onMouseLeave: () => void

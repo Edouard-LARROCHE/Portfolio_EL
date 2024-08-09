@@ -48,10 +48,10 @@ const NavBar = () => {
 					id="firstButton"
 					className={`containerButton ${isPopupOpen.firstButton ? "open" : ""}`}
 					onClick={() => handleClickClosePopup("firstButton")}
-					// onMouseEnter={() => handleDisplayPopup("firstButton", true)}
-					// onMouseLeave={() =>
-					// 	handleDisplayPopup("firstButton", false)
-					// }
+					onMouseEnter={() => handleDisplayPopup("firstButton", true)}
+					onMouseLeave={() =>
+						handleDisplayPopup("firstButton", false)
+					}
 				>
 					<div className="text">Why me?</div>
 					<div
@@ -64,12 +64,12 @@ const NavBar = () => {
 							target="withMe"
 							size="large"
 							stopPropagation={(e) => e.stopPropagation()}
-							// onMouseEnter={() =>
-							// 	handleDisplayPopup("firstButton", true)
-							// }
-							// onMouseLeave={() =>
-							// 	handleDisplayPopup("firstButton", false)
-							// }
+							onMouseEnter={() =>
+								handleDisplayPopup("firstButton", true)
+							}
+							onMouseLeave={() =>
+								handleDisplayPopup("firstButton", false)
+							}
 						/>
 					)}
 				</div>
@@ -84,7 +84,7 @@ const NavBar = () => {
 						handleDisplayPopup("secondButton", false)
 					}
 				>
-					<div className="text">Projects</div>
+					<div className="text">Discover</div>
 					<div
 						className={`icon ${isPopupOpen.secondButton ? "open" : ""}`}
 					>
@@ -92,7 +92,7 @@ const NavBar = () => {
 					</div>
 					{isPopupOpen.secondButton && (
 						<Popup
-							target="projects"
+							target="discover"
 							size="medium"
 							stopPropagation={(e) => e.stopPropagation()}
 							onMouseEnter={() =>

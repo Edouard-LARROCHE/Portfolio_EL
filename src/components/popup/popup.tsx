@@ -85,6 +85,9 @@ const Popup = ({
 					</div>
 				</div>
 			)}
+			{target === "discover" && (
+				<div className="popupContainerContent"></div>
+			)}
 		</div>
 	)
 }
