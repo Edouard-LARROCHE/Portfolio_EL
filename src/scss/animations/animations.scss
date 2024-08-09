@@ -3,3 +3,10 @@
 		background-position-x: -200%;
 	}
 }
+
+@keyframes reveal {
+	to {
+		clip-path: inset(0 0 0 0);
+	}
+}
+
