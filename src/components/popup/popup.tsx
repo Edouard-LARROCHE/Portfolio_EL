@@ -30,25 +30,53 @@ const Popup = ({
 								<div className="iconUseCase">
 									<Techno />
 								</div>
-								<div className="textUp">lorem ipsum justo</div>
+								<div className="containerText">
+									<div className="textUp">
+										Tech Enthusiast
+									</div>
+									<div className="textDown">
+										Expert in modern development and
+										innovative solutions.
+									</div>
+								</div>
 							</li>
 							<li>
 								<div className="iconUseCase">
 									<Cyber />
 								</div>
-								<div className="textUp">lorem ipsum justo</div>
+								<div className="containerText">
+									<div className="textUp">Security First</div>
+									<div className="textDown">
+										Protecting systems and sensitive data
+										with precision.
+									</div>
+								</div>
 							</li>
 							<li>
 								<div className="iconUseCase">
 									<Leader />
 								</div>
-								<div className="textUp">lorem ipsum justo</div>
+								<div className="containerText">
+									<div className="textUp">
+										Committed Leader
+									</div>
+									<div className="textDown">
+										Guiding teams to achieve collective
+										excellence.
+									</div>
+								</div>
 							</li>
 							<li>
 								<div className="iconUseCase">
 									<Archi />
 								</div>
-								<div className="textUp">lorem ipsum justo</div>
+								<div className="containerText">
+									<div className="textUp">Web Architect</div>
+									<div className="textDown">
+										Designing robust and scalable web
+										architectures.
+									</div>
+								</div>
 							</li>
 						</ul>
 					</div>

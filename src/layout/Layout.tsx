@@ -1,5 +1,3 @@
-import React from "react"
-
 import LeftSide from "../pages/leftSide"
 import RightSide from "../pages/rightSide"
 

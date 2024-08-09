@@ -1,0 +1,46 @@
+@use "../../scss/animations/animations.scss" as *;
+@use "../../scss/config/functions" as *;
+
+span {
+	position: absolute;
+	background: linear-gradient(to right, #0c002b, #1779ff);
+
+	&:nth-child(1) {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: convertToREM(1);
+		animation: snake-border-1 8s linear infinite;
+	}
+
+	&:nth-child(2) {
+		top: 0;
+		right: 0;
+		width: convertToREM(1);
+		height: 100%;
+		background: linear-gradient(to bottom, #0c002b, #1779ff);
+		animation: snake-border-2 8s linear infinite;
+		animation-delay: 4s;
+	}
+
+	&:nth-child(3) {
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: convertToREM(1);
+		background: linear-gradient(to left, #0c002b, #1779ff);
+		animation: snake-border-3 8s linear infinite;
+		animation-delay: 8s;
+	}
+
+	&:nth-child(4) {
+		top: 0;
+		left: 0;
+		width: convertToREM(1);
+		height: 100%;
+		background: linear-gradient(to top, #0c002b, #1779ff);
+		animation: snake-border-4 8s linear infinite;
+		animation-delay: 12s;
+	}
+}
+
