@@ -35,9 +35,28 @@
 				margin-right: 1rem;
 			}
 
-			.card-title {
-				font-size: 1.5rem;
-				font-weight: bold;
+			.topCardContainer {
+				flex-direction: column;
+
+				.card-title {
+					white-space: nowrap;
+					width: 10rem;
+					font-size: 1.5rem;
+				}
+
+				.icon {
+					margin: 0.5rem 0 0 -0.5rem;
+					width: 2.5rem;
+					height: 2.5rem;
+					display: flex;
+					align-items: center;
+
+					.fork-count {
+						font-size: 1.3rem;
+						font-weight: 600;
+						color: $white;
+					}
+				}
 			}
 		}
 

@@ -21,3 +21,22 @@ export const getGithubRepos = async () => {
 	return repos
 }
 
+export const getGitHubLanguagesRepositories = async ({
+	userName,
+	repoName,
+}: {
+	userName: string
+	repoName: string
+}) => {
+	const languages = await fetch(
+		`${URL}/repos/${userName}/${repoName}/languages`,
+		{
+			headers: {
+				Authorization: `token ${GITHUB_TOKEN}`,
+			},
+		},
+	).then((response) => response.json())
+
+	return languages
+}
+
