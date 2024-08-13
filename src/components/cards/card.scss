@@ -1,0 +1,49 @@
+@use "../../scss/config/primitives" as *;
+@use "../../scss/config/functions" as *;
+
+.cardContainer {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 22rem;
+	height: 13rem;
+	border-radius: 0.5rem;
+	border: 0.02rem solid $grey-grey;
+	background-color: $blue-sky-space-light-opacity;
+	padding: 1rem;
+	margin: 1rem;
+
+	color: white;
+
+	&:hover {
+		background-color: $blue-sky-space-light;
+	}
+
+	.card-body {
+		padding: convertToREM(10);
+
+		.top-card {
+			display: flex;
+
+			.card-logo {
+				width: 5rem;
+				height: 5rem;
+				border-radius: 0.5rem;
+				background-color: $grey-grey;
+				margin-right: 1rem;
+			}
+
+			.card-title {
+				font-size: 1.5rem;
+				font-weight: bold;
+			}
+		}
+
+		.card-text {
+			font-size: 1rem;
+		}
+	}
+}
+

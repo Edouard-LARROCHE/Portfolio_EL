@@ -8,6 +8,7 @@
 	width: 45%;
 	height: 100%;
 	background-color: $bg-black;
+	overflow-y: auto;
 
 	.top {
 		display: flex;
@@ -29,15 +30,16 @@
 	.measureContainer {
 		display: flex;
 		flex-direction: column;
-		position: absolute;
+		position: fixed;
 		top: 0;
-		left: convertToREM(0);
+		left: 55%;
 		width: convertToREM(1);
-		height: 100%;
+		height: 100vh;
 		background-color: $blue-sky-space;
 		opacity: 0.5;
 
 		.linesWrapper {
+			overflow-y: auto;
 			position: absolute;
 			left: convertToREM(-10);
 
