@@ -6,7 +6,7 @@ import {
 } from "react-router-dom"
 import Layout from "./layout/Layout"
 import Activity from "./pages/activity/activity"
-// import Projects from "../components/projects/projects";
+import Projects from "./pages/projects/projects"
 // import Contact from "../components/contact/contact";
 
 function App() {
@@ -17,8 +17,11 @@ function App() {
 					<Route path="/" element={<Layout />}>
 						<Route index element={<Navigate to="/home" />} />
 						<Route path="/home/activity" element={<Activity />} />
-						{/* <Route path="/home/projects" element={<Projects />} />
-            <Route path="/home/contact" element={<Contact />} /> */}
+						<Route
+							path="/home/projects"
+							element={<Projects repos={null} />}
+						/>
+						{/* <Route path="/home/contact" element={<Contact />} /> */}
 					</Route>
 				</Routes>
 			</Router>

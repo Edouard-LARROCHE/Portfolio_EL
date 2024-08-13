@@ -1,19 +1,22 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { useNavigate, useLocation } from "react-router-dom"
 
 import Buttons from "../../components/buttons/buttons"
 import Activity from "../activity/activity"
-// import Projects from "../projects/projects";
+import Projects from "../projects/projects"
 // import Contact from "../contact/contact";
 
 import "./index.scss"
+import { getGithubRepos } from "../../services/services"
 
 const RightSide = () => {
 	const navigate = useNavigate()
+	const location = useLocation()
 
 	const [activeComponent, setActiveComponent] = useState<
 		"activity" | "projects" | "contact" | null
 	>(null)
+	const [repos, setRepos] = useState(null)
 
 	const buttonsActions = [
 		{
@@ -39,6 +42,25 @@ const RightSide = () => {
 		},
 	]
 
+	useEffect(() => {
+		if (location.pathname === "/home/projects") {
+			setActiveComponent("projects")
+
+			getGithubRepos().then((repos) => {
+				setRepos(repos)
+				console.log(repos, "repos")
+			})
+		}
+
+		if (location.pathname === "/home/activity") {
+			setActiveComponent("activity")
+		}
+
+		if (location.pathname === "/home/contact") {
+			setActiveComponent("contact")
+		}
+	}, [location])
+
 	function renderMeasure() {
 		return Array.from({ length: 90 }, (_, index) => (
 			<div key={index} className="line" />
@@ -57,8 +79,8 @@ const RightSide = () => {
 		switch (activeComponent) {
 			case "activity":
 				return <Activity />
-			//   case "projects":
-			//     return <Projects />;
+			case "projects":
+				return <Projects repos={repos} />
 			//   case "contact":
 			//     return <Contact />;
 			default:
