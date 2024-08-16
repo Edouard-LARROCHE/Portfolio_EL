@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
 
+import { getGithubReposWithLanguages } from "../../services/services"
+
 import Buttons from "../../components/buttons/buttons"
 import Activity from "../activity/activity"
 import Projects from "../projects/projects"
 // import Contact from "../contact/contact";
 
+import type { ReposProps } from "../../types/types"
+
 import "./index.scss"
-import { getGithubRepos } from "../../services/services"
 
 const RightSide = () => {
 	const navigate = useNavigate()
@@ -16,7 +19,7 @@ const RightSide = () => {
 	const [activeComponent, setActiveComponent] = useState<
 		"activity" | "projects" | "contact" | null
 	>(null)
-	const [repos, setRepos] = useState(null)
+	const [repos, setRepos] = useState<ReposProps>([])
 
 	const buttonsActions = [
 		{
@@ -46,7 +49,7 @@ const RightSide = () => {
 		if (location.pathname === "/home/projects") {
 			setActiveComponent("projects")
 
-			getGithubRepos().then((repos) => {
+			getGithubReposWithLanguages().then((repos: ReposProps) => {
 				setRepos(repos)
 				console.log(repos, "repos")
 			})

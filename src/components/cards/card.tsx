@@ -1,22 +1,18 @@
-import { useEffect, useState } from "react"
-
-import { truncate } from "../../utils/utils"
+import {
+	truncate,
+	capitalizeFirstLetter,
+	transformAndSortLanguages,
+} from "../../utils/utils"
 import type { CardProps } from "./types"
-import { getGitHubLanguagesRepositories } from "../../services/services"
 
 import Fork from "../../assets/icons/fork.svg?react"
 
 import "./card.scss"
 
 const Card = ({ data }: CardProps) => {
-	useEffect(() => {
-		getGitHubLanguagesRepositories({
-			userName: data.owner.login,
-			repoName: data.name,
-		}).then((data) => {
-			console.log(data)
-		})
-	}, [data])
+	const transformedLanguages = transformAndSortLanguages(data.languages)
+	const languageKeys = Object.keys(transformedLanguages)
+	const shouldDisplayLanguages = languageKeys.length > 0
 
 	return (
 		<div className="cardContainer">
@@ -25,12 +21,17 @@ const Card = ({ data }: CardProps) => {
 					<div className="card-logo">LOGO</div>
 					<div className="topCardContainer">
 						<div className="card-title">
-							{truncate(data.name, 15)}
+							{capitalizeFirstLetter(truncate(data.name, 15))}
 						</div>
 						<div className="icon">
 							<Fork />
 							<div className="fork-count">{data.forks_count}</div>
 						</div>
+						{shouldDisplayLanguages && (
+							<div className="language-container">
+								# {languageKeys.join(", ")}
+							</div>
+						)}
 					</div>
 				</div>
 				<p className="card-text">

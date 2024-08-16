@@ -11,6 +11,30 @@ export const getGithubProfile = async () => {
 	return profile
 }
 
+export const getGithubReposWithLanguages = async () => {
+	const repos = await fetch(`${URL}/user/repos`, {
+		headers: {
+			Authorization: `token ${GITHUB_TOKEN}`,
+		},
+	}).then((response) => response.json())
+
+	const reposWithLanguages = await Promise.all(
+		repos.map(async (repo: { owner: { login: any }; name: any }) => {
+			const languages = await getGitHubLanguagesRepositories({
+				userName: repo.owner.login,
+				repoName: repo.name,
+			})
+
+			return {
+				...repo,
+				languages,
+			}
+		}),
+	)
+
+	return reposWithLanguages
+}
+
 export const getGithubRepos = async () => {
 	const repos = await fetch(`${URL}/user/repos`, {
 		headers: {
