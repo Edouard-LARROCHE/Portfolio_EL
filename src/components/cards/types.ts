@@ -1,4 +1,5 @@
 export type CardProps = {
+	loading?: boolean
 	data: {
 		id: number
 		name: string
@@ -7,6 +8,6 @@ export type CardProps = {
 			login: string
 		}
 		languages: Record<string, number>
-	}
+	} | null
 }
 

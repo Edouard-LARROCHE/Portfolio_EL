@@ -5,7 +5,6 @@
 	cursor: pointer;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 	width: 22rem;
 	height: 13rem;
@@ -14,8 +13,7 @@
 	background-color: $blue-sky-space-light-opacity;
 	padding: 1rem;
 	margin: 1rem;
-
-	color: white;
+	color: $white;
 
 	&:hover {
 		background-color: $blue-sky-space-light;
@@ -28,8 +26,9 @@
 			display: flex;
 
 			.card-logo {
-				width: 5rem;
-				height: 5rem;
+				min-width: 6rem;
+				min-height: 6rem;
+				max-height: 6rem;
 				border-radius: 0.5rem;
 				background-color: $grey-grey;
 				margin-right: 1rem;

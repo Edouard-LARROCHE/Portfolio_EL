@@ -1,4 +1,5 @@
 export type ProjectsProps = {
+	loading: boolean
 	repos: {
 		id: number
 		name: string

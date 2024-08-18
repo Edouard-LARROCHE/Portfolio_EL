@@ -33,6 +33,11 @@
 			width: calc(100% / 3 - 0.5rem);
 			height: convertToREM(21);
 		}
+
+		&.card {
+			width: 100%;
+			height: calc(100% - 0.6rem);
+		}
 	}
 }
 

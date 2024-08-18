@@ -20,6 +20,7 @@ const RightSide = () => {
 		"activity" | "projects" | "contact" | null
 	>(null)
 	const [repos, setRepos] = useState<ReposProps>([])
+	const [loading, setLoading] = useState(true)
 
 	const buttonsActions = [
 		{
@@ -51,7 +52,8 @@ const RightSide = () => {
 
 			getGithubReposWithLanguages().then((repos: ReposProps) => {
 				setRepos(repos)
-				console.log(repos, "repos")
+				setLoading(false)
+				// console.log(repos, "repos")
 			})
 		}
 
@@ -83,7 +85,7 @@ const RightSide = () => {
 			case "activity":
 				return <Activity />
 			case "projects":
-				return <Projects repos={repos} />
+				return <Projects repos={repos} loading={loading} />
 			//   case "contact":
 			//     return <Contact />;
 			default:
