@@ -1,8 +1,9 @@
 import { useState, useRef } from "react"
 
 import type { Button } from "./types"
-
 import Popup from "../popup/popup"
+
+import Logo from "../../assets/icons/logo.svg?react"
 import Arrow from "../../assets/icons/arrow.svg?react"
 
 import "./navBar.scss"
@@ -43,7 +44,9 @@ const NavBar = () => {
 	return (
 		<div className="containerNavBar">
 			<div className="navBar">
-				<div className="name">Edouard Lrc</div>
+				<div className="logo">
+					<Logo />
+				</div>
 				<div
 					id="firstButton"
 					className={`containerButton ${isPopupOpen.firstButton ? "open" : ""}`}

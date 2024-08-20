@@ -4,21 +4,36 @@ import {
 	transformAndSortLanguages,
 } from "../../utils/utils"
 import type { CardProps } from "./types"
+
 import LoadingText from "../animations/loader/loaderText"
 
 import Fork from "../../assets/icons/fork.svg?react"
+import DefaultLogo from "../../assets/icons/logo.svg?react"
 
 import "./card.scss"
 
-const Card = ({ data, loading }: CardProps) => {
+const Card = ({ data, loading, updatedProjects }: CardProps) => {
+	const project = updatedProjects.find(
+		(project: any) => project.id === data?.id,
+	)
+	const checkString =
+		typeof project?.logo === "string" && project.logo.endsWith(".png")
 	const transformedLanguages = transformAndSortLanguages(
 		data ? data.languages : {},
 	)
 	const languageKeys = Object.keys(transformedLanguages)
 	const shouldDisplayLanguages = languageKeys.length > 0
 
+	const handleRedirectLinkRepo = () => {
+		if (!data) return
+		window.open(data?.html_url, "_blank")
+	}
+
 	return (
-		<div className={`cardContainer ${loading ? "loading" : ""}`}>
+		<div
+			className={`cardContainer ${loading ? "loading" : ""}`}
+			onClick={!loading ? handleRedirectLinkRepo : undefined}
+		>
 			{loading ? (
 				<div className="containerLoader">
 					<LoadingText
@@ -29,7 +44,18 @@ const Card = ({ data, loading }: CardProps) => {
 			) : (
 				<div className="card-body">
 					<div className="top-card">
-						<div className="card-logo"></div>
+						<div
+							className={`card-logo ${checkString ? "" : "emptyBg"}`}
+						>
+							{checkString ? (
+								<img
+									src={project.logo ?? ""}
+									alt="Project logo"
+								/>
+							) : project?.logo === "" ? (
+								<DefaultLogo />
+							) : null}
+						</div>
 						<div className="topCardContainer">
 							<div className="card-title">
 								{capitalizeFirstLetter(
@@ -49,10 +75,7 @@ const Card = ({ data, loading }: CardProps) => {
 							)}
 						</div>
 					</div>
-					{/* <p className="card-text">
-					Some quick example text to build on the card title and make
-					up the bulk of the card's content.
-				</p> */}
+					<p className="card-text">{project?.description}</p>
 				</div>
 			)}
 		</div>

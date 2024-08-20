@@ -14,11 +14,19 @@
 		height: 100%;
 		padding: 0 2rem;
 
-		.name {
-			font-size: 1.2rem;
-			font-weight: bold;
-			color: $white;
-			margin-right: 4rem;
+		.logo {
+			margin-right: 2rem;
+
+			svg {
+				width: 2.5rem;
+				height: 2.5rem;
+
+				g {
+					polygon {
+						fill: $white;
+					}
+				}
+			}
 		}
 
 		.containerButton {

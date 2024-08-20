@@ -1,0 +1,21 @@
+{
+	"projects": [
+		{
+			"logo": "mars-bot.png",
+			"description": "Project 1 description"
+		},
+		{
+			"logo": "wildcodeschool.png",
+			"description": "Project 2 description"
+		},
+		{
+			"logo": "",
+			"description": "Project 3 description"
+		},
+		{
+			"logo": "",
+			"description": "Project 4 description"
+		}
+	]
+}
+

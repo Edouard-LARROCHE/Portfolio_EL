@@ -7,6 +7,7 @@ export type ProjectsProps = {
 		owner: {
 			login: string
 		}
+		html_url: string
 		languages: Record<string, number>
 	}[]
 }

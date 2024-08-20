@@ -7,7 +7,13 @@ export type CardProps = {
 		owner: {
 			login: string
 		}
+		html_url: string
 		languages: Record<string, number>
 	} | null
+	updatedProjects: {
+		logo?: string | null
+		description: string
+		id?: number
+	}[]
 }
 
