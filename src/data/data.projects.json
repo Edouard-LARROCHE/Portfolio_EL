@@ -15,6 +15,30 @@
 		{
 			"logo": "",
 			"description": "Project 4 description"
+		},
+		{
+			"logo": "",
+			"description": "Project 5 description"
+		},
+		{
+			"logo": "apple.svg",
+			"description": "Project 6 description"
+		},
+		{
+			"logo": "",
+			"description": "Project 7 description"
+		},
+		{
+			"logo": "",
+			"description": "Project 8 description"
+		},
+		{
+			"logo": "lockself.svg",
+			"description": "Project 9 description"
+		},
+		{
+			"logo": "maison-morin.png",
+			"description": "Project 10 description"
 		}
 	]
 }

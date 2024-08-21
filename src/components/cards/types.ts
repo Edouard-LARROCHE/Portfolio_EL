@@ -1,5 +1,6 @@
 export type CardProps = {
 	loading?: boolean
+	target?: "projects" | "activity" | "contact"
 	data: {
 		id: number
 		name: string

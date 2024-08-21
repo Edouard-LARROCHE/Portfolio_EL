@@ -6,13 +6,16 @@ import {
 import type { CardProps } from "./types"
 
 import LoadingText from "../animations/loader/loaderText"
+import BorderAnim from "../animations/border/borderAnim"
 
 import Fork from "../../assets/icons/fork.svg?react"
 import DefaultLogo from "../../assets/icons/logo.svg?react"
+import Apple from "../../assets/icons/apple.svg?react"
+import LockSelf from "../../assets/projects/icons/lockself.svg?react"
 
 import "./card.scss"
 
-const Card = ({ data, loading, updatedProjects }: CardProps) => {
+const Card = ({ data, loading, updatedProjects, target }: CardProps) => {
 	const project = updatedProjects.find(
 		(project: any) => project.id === data?.id,
 	)
@@ -31,7 +34,7 @@ const Card = ({ data, loading, updatedProjects }: CardProps) => {
 
 	return (
 		<div
-			className={`cardContainer ${loading ? "loading" : ""}`}
+			className={`cardContainer ${loading ? "loading" : ""} ${target}`}
 			onClick={!loading ? handleRedirectLinkRepo : undefined}
 		>
 			{loading ? (
@@ -41,7 +44,7 @@ const Card = ({ data, loading, updatedProjects }: CardProps) => {
 						number={3}
 					/>
 				</div>
-			) : (
+			) : target === "projects" ? (
 				<div className="card-body">
 					<div className="top-card">
 						<div
@@ -53,7 +56,11 @@ const Card = ({ data, loading, updatedProjects }: CardProps) => {
 									alt="Project logo"
 								/>
 							) : project?.logo === "" ? (
-								<DefaultLogo />
+								<DefaultLogo className="defaultLogo" />
+							) : project?.logo === "apple.svg" ? (
+								<Apple className="logo apple" />
+							) : project?.logo === "lockself.svg" ? (
+								<LockSelf className="logo LS" />
 							) : null}
 						</div>
 						<div className="topCardContainer">
@@ -77,6 +84,10 @@ const Card = ({ data, loading, updatedProjects }: CardProps) => {
 					</div>
 					<p className="card-text">{project?.description}</p>
 				</div>
+			) : (
+				// <div className="card-body">
+				<BorderAnim />
+				// </div>
 			)}
 		</div>
 	)

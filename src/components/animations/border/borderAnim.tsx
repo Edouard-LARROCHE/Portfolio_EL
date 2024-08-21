@@ -3,10 +3,10 @@ import "./borderAnim.scss"
 const BorderAnim = () => {
 	return (
 		<>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
+			<div className="span"></div>
+			<div className="span"></div>
+			<div className="span"></div>
+			<div className="span"></div>
 		</>
 	)
 }

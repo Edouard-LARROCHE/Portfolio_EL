@@ -6,6 +6,7 @@ import dataProjects from "../../data/data.projects.json"
 
 import MarsBot from "../../assets/projects/img/mars-bot.png"
 import WCS from "../../assets/projects/img/wildcodeschool.png"
+import MM from "../../assets/projects/img/maison-morin.png"
 
 import "./projects.scss"
 
@@ -14,6 +15,9 @@ const Projects = ({ repos, loading }: ProjectsProps) => {
 		"": null,
 		"mars-bot.png": MarsBot,
 		"wildcodeschool.png": WCS,
+		"apple.svg": "",
+		"lockself.svg": "",
+		"maison-morin.png": MM,
 	}
 	const initialProjects = dataProjects.projects.map((project) => {
 		if (project.logo) {
@@ -47,7 +51,12 @@ const Projects = ({ repos, loading }: ProjectsProps) => {
 	const loadingCards = Array.from({ length: 8 }, (_, index) => {
 		return (
 			<div key={index}>
-				<Card data={null} loading updatedProjects={updatedProjects} />
+				<Card
+					data={null}
+					loading
+					updatedProjects={updatedProjects}
+					target="projects"
+				/>
 			</div>
 		)
 	})
@@ -61,6 +70,7 @@ const Projects = ({ repos, loading }: ProjectsProps) => {
 							<Card
 								data={repo}
 								updatedProjects={updatedProjects}
+								target="projects"
 							/>
 						</div>
 					))}
