@@ -2,6 +2,7 @@
 @use "../../../scss/config/functions" as *;
 
 .span.animated {
+	z-index: 1;
 	position: absolute;
 	background: linear-gradient(to right, #0c002b, #1779ff);
 	opacity: 0;

@@ -8,6 +8,13 @@ import type { CardProps } from "./types"
 import LoadingText from "../animations/loader/loaderText"
 import BorderAnim from "../animations/border/borderAnim"
 
+import Profil from "../../assets/img/profil-pic.png"
+import React from "../../assets/icons/react.svg?react"
+import Node from "../../assets/icons/node.svg?react"
+import Sass from "../../assets/icons/sass.svg?react"
+import Css from "../../assets/icons/css.svg?react"
+import Js from "../../assets/icons/js.svg?react"
+import Ts from "../../assets/icons/typescript.svg?react"
 import Fork from "../../assets/icons/fork.svg?react"
 import DefaultLogo from "../../assets/icons/logo.svg?react"
 import Apple from "../../assets/icons/apple.svg?react"
@@ -45,7 +52,7 @@ const Card = ({ data, loading, updatedProjects, target }: CardProps) => {
 					/>
 				</div>
 			) : target === "projects" ? (
-				<div className="card-body">
+				<div className="card-body-projects">
 					<div className="top-card">
 						<div
 							className={`card-logo ${checkString ? "" : "emptyBg"}`}
@@ -85,9 +92,18 @@ const Card = ({ data, loading, updatedProjects, target }: CardProps) => {
 					<p className="card-text">{project?.description}</p>
 				</div>
 			) : (
-				// <div className="card-body">
-				<BorderAnim />
-				// </div>
+				<div className="card-body-activity">
+					<BorderAnim />
+					<img src={Profil} alt="Profil" />
+					<div className="icons">
+						<React className="icon-react" />
+						<Node className="icon-node" />
+						<Sass className="icon-sass" />
+						<Css className="icon-css" />
+						<Js className="icon-js" />
+						<Ts className="icon-ts" />
+					</div>
+				</div>
 			)}
 		</div>
 	)
