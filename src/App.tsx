@@ -4,6 +4,7 @@ import {
 	Routes,
 	Navigate,
 } from "react-router-dom"
+
 import Layout from "./layout/Layout"
 import Activity from "./pages/activity/activity"
 import Projects from "./pages/projects/projects"
@@ -19,7 +20,7 @@ function App() {
 						<Route path="/home/activity" element={<Activity />} />
 						<Route
 							path="/home/projects"
-							element={<Projects repos={null} />}
+							element={<Projects repos={[]} loading={false} />}
 						/>
 						{/* <Route path="/home/contact" element={<Contact />} /> */}
 					</Route>
