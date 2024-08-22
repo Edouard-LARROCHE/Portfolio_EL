@@ -13,6 +13,10 @@ export const capitalizeFirstLetter = (string: string) => {
 }
 
 export const transformAndSortLanguages = (languages: Languages): Languages => {
+	if (!languages || typeof languages !== "object") {
+		return {}
+	}
+
 	return Object.entries(languages)
 		.filter(([key]) => key !== "HTML")
 		.map(([key, value]) => {

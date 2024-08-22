@@ -1,8 +1,63 @@
+@use "../../scss/config/primitives" as *;
+
 .activityContainer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
+
+	.activityDashboard {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 75%;
+		height: 100%;
+		padding-bottom: 4rem;
+
+		.activityCard {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			height: 3.5rem;
+			margin: 1rem;
+			color: $white;
+
+			.containerLogo {
+				min-width: 3.5rem;
+				height: 3.5rem;
+				background-color: rgb(157, 41, 41);
+				border-radius: 0.5rem;
+				margin: 1rem;
+			}
+
+			.containerInfos {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: center;
+				width: 100%;
+				height: 100%;
+
+				.descCard {
+					color: $white;
+				}
+
+				.timeActivity {
+					color: $white;
+				}
+			}
+		}
+
+		.tils {
+			display: flex;
+			align-self: normal;
+			margin-left: 2.7rem;
+			height: 2rem;
+			width: 0.1rem;
+			background-color: $white;
+			opacity: 0.5;
+		}
+	}
 }
 
