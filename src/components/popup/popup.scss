@@ -1,0 +1,108 @@
+@use "../../scss/config/primitives" as *;
+
+.containerPopup {
+	cursor: default;
+	position: absolute;
+	top: 3.4rem;
+	left: -1rem;
+	background-color: $drak-blue;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.2rem;
+	padding: 2rem;
+	overflow: hidden;
+	border-radius: 0.6rem;
+	border: 0.02rem solid $grey-grey;
+
+	&.large {
+		width: 80rem;
+		height: 40rem;
+	}
+
+	&.medium {
+		width: 60rem;
+		height: 30rem;
+	}
+
+	.popupContainerContent {
+		display: grid;
+		grid-template-columns: 1fr 50%;
+		grid-template-rows: repeat(2, 1fr);
+		gap: 1rem;
+		width: 100%;
+		height: 100%;
+		padding: 1rem;
+
+		.contentLeft {
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		.contentRight {
+			grid-column: 2;
+			grid-row: 1;
+		}
+
+		.title {
+			font-size: 1.1rem;
+			font-weight: 500;
+			color: $grey-light;
+			letter-spacing: 0.05rem;
+			margin-bottom: 3rem;
+		}
+
+		ul {
+			margin-left: -2.5rem;
+
+			li {
+				display: flex;
+				align-items: center;
+				margin: 0.5rem 0 1.5rem 0;
+
+				.iconUseCase {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					min-width: 4.5rem;
+					min-height: 4.5rem;
+					border-radius: 50%;
+					background-color: $blue-lagoon;
+					margin: 0 1rem 1rem 0;
+
+					svg {
+						width: 2.5rem;
+						height: 2.5rem;
+
+						path {
+							fill: $white;
+						}
+					}
+				}
+
+				.containerText {
+					display: flex;
+					flex-direction: column;
+					margin-top: -1rem;
+
+					.textUp {
+						font-size: 1.3rem;
+						font-weight: 500;
+						color: $white;
+						letter-spacing: 0.05rem;
+						margin-bottom: 0.5rem;
+					}
+
+					.textDown {
+						font-size: 1rem;
+						font-weight: 400;
+						color: $white;
+						opacity: 0.7;
+						letter-spacing: 0.05rem;
+					}
+				}
+			}
+		}
+	}
+}
+

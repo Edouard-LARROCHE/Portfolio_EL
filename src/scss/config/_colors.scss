@@ -1,0 +1,12 @@
+@use "./primitives" as *;
+
+body {
+	--background-color: #{$vanta-black};
+	background-color: var(--background-color);
+}
+
+:root {
+	--loading-card-bg-1: #{$drak-blue};
+	--loading-card-bg-2: #{$blue-lagoon};
+}
+

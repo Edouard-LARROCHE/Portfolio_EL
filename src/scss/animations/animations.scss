@@ -1,0 +1,64 @@
+@keyframes animationShine {
+	to {
+		background-position-x: -200%;
+	}
+}
+
+@keyframes reveal {
+	to {
+		clip-path: inset(0 0 0 0);
+	}
+}
+
+@keyframes snake-1 {
+	0% {
+		opacity: 1;
+		transform: translateX(-100%);
+	}
+	25% {
+		transform: translateX(100%);
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes snake-2 {
+	0% {
+		opacity: 1;
+		transform: translateY(-100%);
+	}
+	25% {
+		transform: translateY(100%);
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes snake-3 {
+	0% {
+		opacity: 1;
+		transform: translateX(100%);
+	}
+	25% {
+		transform: translateX(-100%);
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes snake-4 {
+	0% {
+		opacity: 1;
+		transform: translateY(100%);
+	}
+	25% {
+		transform: translateY(-100%);
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
