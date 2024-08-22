@@ -27,6 +27,54 @@
 				height: 3.5rem;
 				border-radius: 0.5rem;
 				margin: 1rem;
+
+				.defaultLogo {
+					g {
+						polygon {
+							fill: $blue-sky-space;
+						}
+					}
+				}
+
+				.otherLogo {
+					g {
+						path {
+							fill: $blue-cerulean;
+						}
+					}
+				}
+
+				.archiLogo {
+					g {
+						polygon {
+							fill: $brand-grey;
+						}
+					}
+				}
+
+				.polygonLogo {
+					g {
+						polygon {
+							fill: $red-warning;
+						}
+					}
+				}
+
+				.starsLogo {
+					g {
+						path {
+							fill: $indicator-warning;
+						}
+					}
+				}
+
+				.triangleDownLogo {
+					g {
+						path {
+							fill: $green-custom;
+						}
+					}
+				}
 			}
 
 			.containerInfos {
@@ -55,7 +103,7 @@
 		.tils {
 			display: flex;
 			align-self: normal;
-			margin-left: 2.7rem;
+			margin: 1rem 0 0 2.7rem;
 			height: 2rem;
 			width: 0.1rem;
 			background-color: $white;
