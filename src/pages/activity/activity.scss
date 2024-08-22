@@ -1,8 +1,114 @@
+@use "../../scss/config/primitives" as *;
+
 .activityContainer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
+
+	.activityDashboard {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 75%;
+		padding: 4rem 0;
+
+		.activityCard {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			height: 3.5rem;
+			margin: 1rem;
+			color: $white;
+
+			.containerLogo {
+				min-width: 3.5rem;
+				height: 3.5rem;
+				border-radius: 0.5rem;
+				margin: 1rem;
+
+				.defaultLogo {
+					g {
+						polygon {
+							fill: $blue-sky-space;
+						}
+					}
+				}
+
+				.otherLogo {
+					g {
+						path {
+							fill: $blue-cerulean;
+						}
+					}
+				}
+
+				.archiLogo {
+					g {
+						polygon {
+							fill: $brand-grey;
+						}
+					}
+				}
+
+				.polygonLogo {
+					g {
+						polygon {
+							fill: $red-warning;
+						}
+					}
+				}
+
+				.starsLogo {
+					g {
+						path {
+							fill: $indicator-warning;
+						}
+					}
+				}
+
+				.triangleDownLogo {
+					g {
+						path {
+							fill: $green-custom;
+						}
+					}
+				}
+			}
+
+			.containerInfos {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: center;
+				width: 100%;
+				height: 100%;
+
+				.descCard {
+					color: $white;
+					font-size: 1.2rem;
+					font-weight: 600;
+				}
+
+				.timeActivity {
+					color: $white;
+					opacity: 0.7;
+					font-size: 1.1rem;
+					margin: 0.2rem 0 0 0.2rem;
+				}
+			}
+		}
+
+		.tils {
+			display: flex;
+			align-self: normal;
+			margin: 1rem 0 0 2.7rem;
+			height: 2rem;
+			width: 0.1rem;
+			background-color: $white;
+			opacity: 0.5;
+		}
+	}
 }
 

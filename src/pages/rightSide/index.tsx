@@ -47,14 +47,17 @@ const RightSide = () => {
 	]
 
 	useEffect(() => {
-		if (location.pathname === "/home/projects") {
+		if (
+			location.pathname === "/home/projects" ||
+			location.pathname === "/home/activity"
+		) {
 			setActiveComponent("projects")
 
 			getGithubReposWithLanguages().then((repos: ReposProps) => {
 				setRepos(repos)
 				setLoading(false)
 
-				// console.log(repos)
+				console.log(repos)
 			})
 		}
 

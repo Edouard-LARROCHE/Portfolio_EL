@@ -29,13 +29,13 @@ const Card = ({ data, loading, updatedProjects, target }: CardProps) => {
 	const checkString =
 		typeof project?.logo === "string" && project.logo.endsWith(".png")
 	const transformedLanguages = transformAndSortLanguages(
-		data ? data.languages : {},
+		data?.languages || {},
 	)
 	const languageKeys = Object.keys(transformedLanguages)
 	const shouldDisplayLanguages = languageKeys.length > 0
 
 	const handleRedirectLinkRepo = () => {
-		if (!data) return
+		if (!data || target === "activity") return
 		window.open(data?.html_url, "_blank")
 	}
 
@@ -44,7 +44,7 @@ const Card = ({ data, loading, updatedProjects, target }: CardProps) => {
 			className={`cardContainer ${loading ? "loading" : ""} ${target}`}
 			onClick={!loading ? handleRedirectLinkRepo : undefined}
 		>
-			{loading ? (
+			{loading && target === "projects" ? (
 				<div className="containerLoader">
 					<LoadingText
 						type={["small", "medium", "long"]}
