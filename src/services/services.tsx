@@ -64,3 +64,22 @@ export const getGitHubLanguagesRepositories = async ({
 	return languages
 }
 
+export const getGithubActivity = async ({
+	userName,
+	repoName,
+}: {
+	userName: string
+	repoName: string
+}) => {
+	const activity = await fetch(
+		`${URL}/repos/${userName}/${repoName}/commits`,
+		{
+			headers: {
+				Authorization: `token ${GITHUB_TOKEN}`,
+			},
+		},
+	).then((response) => response.json())
+
+	return activity
+}
+

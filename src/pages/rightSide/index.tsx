@@ -53,6 +53,8 @@ const RightSide = () => {
 			getGithubReposWithLanguages().then((repos: ReposProps) => {
 				setRepos(repos)
 				setLoading(false)
+
+				// console.log(repos)
 			})
 		}
 

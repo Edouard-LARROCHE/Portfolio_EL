@@ -16,6 +16,7 @@
 	color: $white;
 
 	&.activity {
+		cursor: default;
 		overflow: hidden;
 		position: relative;
 		margin-top: 5rem;
