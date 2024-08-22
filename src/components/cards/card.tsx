@@ -44,7 +44,7 @@ const Card = ({ data, loading, updatedProjects, target }: CardProps) => {
 			className={`cardContainer ${loading ? "loading" : ""} ${target}`}
 			onClick={!loading ? handleRedirectLinkRepo : undefined}
 		>
-			{loading ? (
+			{loading && target === "projects" ? (
 				<div className="containerLoader">
 					<LoadingText
 						type={["small", "medium", "long"]}

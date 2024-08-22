@@ -12,6 +12,7 @@
 		"lint": "eslint 'src/**/*.{jsx}'"
 	},
 	"dependencies": {
+		"date-fns": "^3.6.0",
 		"prettier": "^3.3.3",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",

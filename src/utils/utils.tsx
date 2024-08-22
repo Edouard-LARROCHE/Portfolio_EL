@@ -1,3 +1,5 @@
+import { formatDistanceToNow } from "date-fns"
+
 type Languages = {
 	[key: string]: number
 }
@@ -30,5 +32,12 @@ export const transformAndSortLanguages = (languages: Languages): Languages => {
 			acc[key] = value
 			return acc
 		}, {} as Languages)
+}
+
+export const TimeActivity = (commit: string) => {
+	const commitDate = new Date(commit)
+	const timeAgo = formatDistanceToNow(commitDate, { addSuffix: true })
+
+	return <div className="timeActivity">{timeAgo}</div>
 }
 

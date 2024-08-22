@@ -12,8 +12,7 @@
 		flex-direction: column;
 		align-items: center;
 		width: 75%;
-		height: 100%;
-		padding-bottom: 4rem;
+		padding: 4rem 0;
 
 		.activityCard {
 			display: flex;
@@ -26,7 +25,6 @@
 			.containerLogo {
 				min-width: 3.5rem;
 				height: 3.5rem;
-				background-color: rgb(157, 41, 41);
 				border-radius: 0.5rem;
 				margin: 1rem;
 			}
@@ -41,10 +39,15 @@
 
 				.descCard {
 					color: $white;
+					font-size: 1.2rem;
+					font-weight: 600;
 				}
 
 				.timeActivity {
 					color: $white;
+					opacity: 0.7;
+					font-size: 1.1rem;
+					margin: 0.2rem 0 0 0.2rem;
 				}
 			}
 		}
