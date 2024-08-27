@@ -6,7 +6,7 @@ import { getGithubReposWithLanguages } from "../../services/services"
 import Buttons from "../../components/buttons/buttons"
 import Activity from "../activity/activity"
 import Projects from "../projects/projects"
-// import Contact from "../contact/contact";
+import Contact from "../contact/contact"
 
 import type { ReposProps } from "../../types/types"
 
@@ -90,8 +90,8 @@ const RightSide = () => {
 				return <Activity />
 			case "projects":
 				return <Projects repos={repos} loading={loading} />
-			//   case "contact":
-			//     return <Contact />;
+			case "contact":
+				return <Contact />
 			default:
 				return null
 		}

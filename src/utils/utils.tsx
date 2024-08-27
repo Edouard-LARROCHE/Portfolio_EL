@@ -41,3 +41,8 @@ export const TimeActivity = (commit: string) => {
 	return <div className="timeActivity">{timeAgo}</div>
 }
 
+export const validateEmail = (email: string) => {
+	const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+	return re.test(email)
+}
+
