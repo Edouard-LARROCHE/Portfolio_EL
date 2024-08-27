@@ -34,6 +34,25 @@
 		height: 100%;
 		padding: 1rem;
 
+		&.discover {
+			grid-template-columns: repeat(3, 1fr);
+
+			.contentLeft {
+				grid-column: 1;
+				grid-row: 1;
+			}
+
+			.contentCenter {
+				grid-column: 2;
+				grid-row: 1;
+			}
+
+			.contentRight {
+				grid-column: 3;
+				grid-row: 1;
+			}
+		}
+
 		.contentLeft {
 			grid-column: 1;
 			grid-row: 1;
@@ -49,6 +68,10 @@
 			color: $grey-light;
 			letter-spacing: 0.05rem;
 			margin-bottom: 3rem;
+
+			&.discover {
+				margin-bottom: 1rem;
+			}
 		}
 
 		.text {
@@ -67,6 +90,11 @@
 				align-items: center;
 				margin: 0.5rem 0 1.5rem 0;
 
+				&.discover {
+					cursor: pointer;
+					margin: 0;
+				}
+
 				.iconUseCase {
 					display: flex;
 					align-items: center;
@@ -77,12 +105,23 @@
 					background-color: $blue-lagoon;
 					margin: 0 1rem 1rem 0;
 
+					&.discover {
+						background-color: transparent;
+						border-radius: none;
+						margin: 0;
+					}
+
 					svg {
 						width: 2.5rem;
 						height: 2.5rem;
 
 						path {
 							fill: $white;
+						}
+
+						&.rocket,
+						&.activity {
+							opacity: 0.7;
 						}
 					}
 				}
@@ -91,6 +130,10 @@
 					display: flex;
 					flex-direction: column;
 					margin-top: -1rem;
+
+					&.discover {
+						margin-top: 0;
+					}
 
 					.textUp {
 						font-size: 1.3rem;

@@ -1,9 +1,13 @@
+import { useNavigate } from "react-router-dom"
+
 import type { PopupProps } from "./types"
 
 import Techno from "../../assets/icons/techno.svg?react"
 import Cyber from "../../assets/icons/cyber-secu.svg?react"
 import Leader from "../../assets/icons/leader.svg?react"
 import Archi from "../../assets/icons/archiWeb.svg?react"
+import Activity from "../../assets/icons/activity.svg?react"
+import Rocket from "../../assets/icons/rocket.svg?react"
 
 import "./popup.scss"
 
@@ -14,6 +18,12 @@ const Popup = ({
 	onMouseEnter,
 	onMouseLeave,
 }: PopupProps) => {
+	const navigate = useNavigate()
+
+	const handleRedirect = (path: string) => {
+		navigate(path)
+	}
+
 	return (
 		<div
 			className={`containerPopup ${size}`}
@@ -126,7 +136,35 @@ const Popup = ({
 				</div>
 			)}
 			{target === "discover" && (
-				<div className="popupContainerContent"></div>
+				<div className={`popupContainerContent ${target}`}>
+					<div className="contentLeft">
+						<div className={`title ${target}`}>Community</div>
+						<ul>
+							<li
+								className={target}
+								onClick={() => handleRedirect("/home/activity")}
+							>
+								<div className={`iconUseCase ${target}`}>
+									<Activity className="activity" />
+								</div>
+								<div className={`containerText ${target}`}>
+									<div className="textUp">Activity</div>
+								</div>
+							</li>
+							<li
+								className={target}
+								onClick={() => handleRedirect("/home/projects")}
+							>
+								<div className={`iconUseCase ${target}`}>
+									<Rocket className="rocket" />
+								</div>
+								<div className={`containerText ${target}`}>
+									<div className="textUp">Projects</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
 			)}
 		</div>
 	)
