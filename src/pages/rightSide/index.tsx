@@ -71,7 +71,7 @@ const RightSide = () => {
 	}, [location])
 
 	function renderMeasure() {
-		return Array.from({ length: 200 }, (_, index) => (
+		return Array.from({ length: 1605 }, (_, index) => (
 			<div key={index} className="line" />
 		))
 	}

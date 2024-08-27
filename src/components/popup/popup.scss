@@ -46,10 +46,17 @@
 
 		.title {
 			font-size: 1.1rem;
-			font-weight: 500;
 			color: $grey-light;
 			letter-spacing: 0.05rem;
 			margin-bottom: 3rem;
+		}
+
+		.text {
+			font-size: 1.3rem;
+			font-weight: 400;
+			color: $white;
+			opacity: 0.8;
+			letter-spacing: 0.05rem;
 		}
 
 		ul {
