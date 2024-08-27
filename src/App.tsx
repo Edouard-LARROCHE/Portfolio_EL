@@ -8,7 +8,7 @@ import {
 import Layout from "./layout/Layout"
 import Activity from "./pages/activity/activity"
 import Projects from "./pages/projects/projects"
-// import Contact from "../components/contact/contact";
+import Contact from "./pages/contact/contact"
 
 function App() {
 	return (
@@ -22,7 +22,7 @@ function App() {
 							path="/home/projects"
 							element={<Projects repos={[]} loading={false} />}
 						/>
-						{/* <Route path="/home/contact" element={<Contact />} /> */}
+						<Route path="/home/contact" element={<Contact />} />
 					</Route>
 				</Routes>
 			</Router>
