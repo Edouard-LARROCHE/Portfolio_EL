@@ -1,0 +1,39 @@
+@use "../../scss/config/primitives" as *;
+
+.containerContact {
+	margin: 4rem 0;
+	padding: 0 2rem;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	color: white;
+
+	.containerText {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 0.5rem;
+		text-align: center;
+
+		.textFirst {
+			font-size: 2.5rem;
+			font-weight: 400;
+			color: $white;
+		}
+
+		.textSecond {
+			font-size: 1.2rem;
+			font-weight: 400;
+			color: $grey-light;
+
+			.highlight {
+				color: $green-custom;
+			}
+		}
+	}
+}
+
