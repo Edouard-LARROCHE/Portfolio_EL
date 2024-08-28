@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 
 import type { PopupProps } from "./types"
 
@@ -8,6 +8,14 @@ import Leader from "../../assets/icons/leader.svg?react"
 import Archi from "../../assets/icons/archiWeb.svg?react"
 import Activity from "../../assets/icons/activity.svg?react"
 import Rocket from "../../assets/icons/rocket.svg?react"
+import Heart from "../../assets/icons/heart.svg?react"
+
+import Discord from "../../assets/icons/contact/discord.svg?react"
+import Github from "../../assets/icons/contact/github.svg?react"
+import Linkedin from "../../assets/icons/contact/linkedin.svg?react"
+import Mail from "../../assets/icons/contact/mail.svg?react"
+import X from "../../assets/icons/contact/x.svg?react"
+import Arrow2 from "../../assets/icons/arrow2.svg?react"
 
 import "./popup.scss"
 
@@ -19,9 +27,16 @@ const Popup = ({
 	onMouseLeave,
 }: PopupProps) => {
 	const navigate = useNavigate()
+	const location = useLocation()
 
 	const handleRedirect = (path: string) => {
-		navigate(path)
+		if (location.pathname !== path) {
+			navigate(path)
+		}
+	}
+
+	const handleClickFollowMe = () => {
+		window.open(`${import.meta.env.VITE_API_REDIRECT_GITHUB}`, "_blank")
 	}
 
 	return (
@@ -126,11 +141,14 @@ const Popup = ({
 								continuous learning and a strong commitment to
 								excellence.
 							</p>
-							<br />I take pride in delivering well-structured,
-							clean code and staying up-to-date with the latest
-							industry trends. I am always eager to take on new
-							challenges and contribute to meaningful projects
-							that make a difference.
+							<br />
+							<p>
+								I take pride in delivering well-structured,
+								clean code and staying up-to-date with the
+								latest industry trends. I am always eager to
+								take on new challenges and contribute to
+								meaningful projects that make a difference.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -141,28 +159,109 @@ const Popup = ({
 						<div className={`title ${target}`}>Community</div>
 						<ul>
 							<li
-								className={target}
+								className={`${target} ${location.pathname === `/home/activity` ? "active" : ""}`}
 								onClick={() => handleRedirect("/home/activity")}
 							>
 								<div className={`iconUseCase ${target}`}>
 									<Activity className="activity" />
 								</div>
 								<div className={`containerText ${target}`}>
-									<div className="textUp">Activity</div>
+									<div
+										className={`textUp ${location.pathname === `/home/activity` ? "active" : ""}`}
+									>
+										Activity
+									</div>
 								</div>
 							</li>
 							<li
-								className={target}
+								className={`${target} ${location.pathname === `/home/projects` ? "active" : ""}`}
 								onClick={() => handleRedirect("/home/projects")}
 							>
 								<div className={`iconUseCase ${target}`}>
 									<Rocket className="rocket" />
 								</div>
 								<div className={`containerText ${target}`}>
-									<div className="textUp">Projects</div>
+									<div
+										className={`textUp ${location.pathname === `/home/projects` ? "active" : ""}`}
+									>
+										Projects
+									</div>
 								</div>
 							</li>
 						</ul>
+					</div>
+				</div>
+			)}
+			{target === "shared" && (
+				<div className={`popupContainerContent ${target}`}>
+					<div className="contentLeft">
+						<div className={`title ${target}`}>Contact</div>
+						<ul className={`${target}`}>
+							<li>
+								<div className="containerIcon">
+									<a
+										href={`${import.meta.env.VITE_API_REDIRECT_DISCORD}`}
+										target="_blank"
+									>
+										<Discord />
+									</a>
+								</div>
+							</li>
+							<li>
+								<div className="containerIcon">
+									<a
+										href={`${import.meta.env.VITE_API_REDIRECT_GITHUB}`}
+										target="_blank"
+									>
+										<Github />
+									</a>
+								</div>
+							</li>
+							<li>
+								<div className="containerIcon">
+									<a
+										href={`${import.meta.env.VITE_API_REDIRECT_LINKEDIN}`}
+										target="_blank"
+									>
+										<Linkedin />
+									</a>
+								</div>
+							</li>
+							<li>
+								<div className="containerIcon">
+									<a
+										href={`${import.meta.env.VITE_API_REDIRECT_MAIL}`}
+									>
+										<Mail />
+									</a>
+								</div>
+							</li>
+							<li>
+								<div className="containerIcon">
+									<a
+										href={`${import.meta.env.VITE_API_REDIRECT_X}`}
+										target="_blank"
+									>
+										<X />
+									</a>
+								</div>
+							</li>
+						</ul>
+						<div className="containerAction">
+							<div
+								className="goToContact"
+								onClick={() => handleRedirect("/home/contact")}
+							>
+								Send me a message
+								<Arrow2 className="arrow2" />
+							</div>
+							<div
+								className="followMe"
+								onClick={() => handleClickFollowMe()}
+							>
+								Follow me on <Heart className="heart" />
+							</div>
+						</div>
 					</div>
 				</div>
 			)}

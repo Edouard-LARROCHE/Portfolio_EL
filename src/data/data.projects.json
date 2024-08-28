@@ -2,43 +2,123 @@
 	"projects": [
 		{
 			"logo": "mars-bot.png",
-			"description": "Project 1 description"
+			"description": "An AI-powered chatbot designed for space exploration support, providing real-time assistance to astronauts."
 		},
 		{
 			"logo": "wildcodeschool.png",
-			"description": "Project 2 description"
+			"description": "An educational platform offering coding bootcamps to equip students with in-demand tech skills."
 		},
 		{
 			"logo": "",
-			"description": "Project 3 description"
+			"description": "A fintech application aimed at simplifying personal finance management with advanced analytics and budgeting tools."
 		},
 		{
 			"logo": "",
-			"description": "Project 4 description"
+			"description": "An e-commerce solution focusing on eco-friendly products, promoting sustainability and green living."
 		},
 		{
 			"logo": "",
-			"description": "Project 5 description"
+			"description": "A mobile health app that monitors users' vital signs and provides personalized wellness recommendations."
 		},
 		{
 			"logo": "apple.svg",
-			"description": "Project 6 description"
+			"description": "An integration tool for Apple devices, enhancing connectivity and productivity within the Apple ecosystem."
 		},
 		{
 			"logo": "",
-			"description": "Project 7 description"
+			"description": "A collaborative project management software designed for remote teams, offering seamless communication and task tracking."
 		},
 		{
 			"logo": "",
-			"description": "Project 8 description"
+			"description": "A blockchain-based platform ensuring secure and transparent transactions for digital assets and cryptocurrencies."
 		},
 		{
 			"logo": "lockself.svg",
-			"description": "Project 9 description"
+			"description": "A cybersecurity solution that provides advanced encryption and identity verification for online accounts."
 		},
 		{
 			"logo": "maison-morin.png",
-			"description": "Project 10 description"
+			"description": "A real estate platform specializing in luxury properties, offering virtual tours and personalized services."
+		},
+		{
+			"logo": "other1",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other2",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other3",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other4",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other5",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other6",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other7",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other2",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other6",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other3",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other1",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other5",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other7",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other4",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other6",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other1",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other3",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other2",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other7",
+			"description": "Come back later."
+		},
+		{
+			"logo": "other6",
+			"description": "Come back later."
 		}
 	]
 }

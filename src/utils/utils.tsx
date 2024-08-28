@@ -34,11 +34,20 @@ export const transformAndSortLanguages = (languages: Languages): Languages => {
 		}, {} as Languages)
 }
 
-export const TimeActivity = (commit: string) => {
+export const TimeActivity = (commit: string, formattedDate?: boolean) => {
 	const commitDate = new Date(commit)
 	const timeAgo = formatDistanceToNow(commitDate, { addSuffix: true })
+	const formatDate = commitDate.toLocaleDateString("en-GB", {
+		day: "2-digit",
+		month: "short",
+		year: "numeric",
+	})
 
-	return <div className="timeActivity">{timeAgo}</div>
+	if (formattedDate) {
+		return <div className="timeActivity">{formatDate}</div>
+	} else {
+		return <div className="timeActivity">{timeAgo}</div>
+	}
 }
 
 export const validateEmail = (email: string) => {

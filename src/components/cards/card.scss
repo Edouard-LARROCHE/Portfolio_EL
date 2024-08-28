@@ -80,6 +80,54 @@
 					}
 				}
 
+				.defaultLogo {
+					g {
+						polygon {
+							fill: $blue-sky-space;
+						}
+					}
+				}
+
+				.otherLogo {
+					g {
+						path {
+							fill: $blue-cerulean;
+						}
+					}
+				}
+
+				.archiLogo {
+					g {
+						polygon {
+							fill: $brand-grey;
+						}
+					}
+				}
+
+				.polygonLogo {
+					g {
+						polygon {
+							fill: $red-warning;
+						}
+					}
+				}
+
+				.starsLogo {
+					g {
+						path {
+							fill: $indicator-warning;
+						}
+					}
+				}
+
+				.triangleDownLogo {
+					g {
+						path {
+							fill: $green-custom;
+						}
+					}
+				}
+
 				img {
 					border-radius: 0.5rem;
 					width: 100%;
