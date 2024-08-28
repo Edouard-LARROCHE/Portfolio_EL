@@ -156,6 +156,17 @@ const Activity = () => {
 											</div>
 										</div>
 									)}
+									{commit.commit.message.includes(
+										"Merge",
+									) && (
+										<div className="mergeInfo">
+											<div className="tils horizontal" />
+											{TimeActivity(
+												commit.commit.committer.date,
+												true,
+											)}
+										</div>
+									)}
 								</div>
 								{index !== activity.length - 1 && (
 									<div className="tils" />
