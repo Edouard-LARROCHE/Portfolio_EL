@@ -141,11 +141,14 @@ const Popup = ({
 								continuous learning and a strong commitment to
 								excellence.
 							</p>
-							<br />I take pride in delivering well-structured,
-							clean code and staying up-to-date with the latest
-							industry trends. I am always eager to take on new
-							challenges and contribute to meaningful projects
-							that make a difference.
+							<br />
+							<p>
+								I take pride in delivering well-structured,
+								clean code and staying up-to-date with the
+								latest industry trends. I am always eager to
+								take on new challenges and contribute to
+								meaningful projects that make a difference.
+							</p>
 						</div>
 					</div>
 				</div>

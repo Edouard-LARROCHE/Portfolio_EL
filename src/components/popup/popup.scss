@@ -147,8 +147,10 @@
 			}
 		}
 
-		.text {
-			font-size: 1.3rem;
+		.text,
+		p {
+			font-family: Arial, sans-serif;
+			font-size: 1rem;
 			font-weight: lighter;
 			color: $white;
 			opacity: 0.7;
