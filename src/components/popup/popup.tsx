@@ -8,6 +8,7 @@ import Leader from "../../assets/icons/leader.svg?react"
 import Archi from "../../assets/icons/archiWeb.svg?react"
 import Activity from "../../assets/icons/activity.svg?react"
 import Rocket from "../../assets/icons/rocket.svg?react"
+import Heart from "../../assets/icons/heart.svg?react"
 
 import Discord from "../../assets/icons/contact/discord.svg?react"
 import Github from "../../assets/icons/contact/github.svg?react"
@@ -32,6 +33,10 @@ const Popup = ({
 		if (location.pathname !== path) {
 			navigate(path)
 		}
+	}
+
+	const handleClickFollowMe = () => {
+		window.open(`${import.meta.env.VITE_API_REDIRECT_GITHUB}`, "_blank")
 	}
 
 	return (
@@ -239,12 +244,20 @@ const Popup = ({
 								</div>
 							</li>
 						</ul>
-						<div
-							className="goToContact"
-							onClick={() => handleRedirect("/home/contact")}
-						>
-							Send me a message
-							<Arrow2 />
+						<div className="containerAction">
+							<div
+								className="goToContact"
+								onClick={() => handleRedirect("/home/contact")}
+							>
+								Send me a message
+								<Arrow2 className="arrow2" />
+							</div>
+							<div
+								className="followMe"
+								onClick={() => handleClickFollowMe()}
+							>
+								Follow me on <Heart className="heart" />
+							</div>
 						</div>
 					</div>
 				</div>

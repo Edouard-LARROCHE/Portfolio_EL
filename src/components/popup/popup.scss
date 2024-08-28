@@ -66,34 +66,67 @@
 			grid-column: 1;
 			grid-row: 1;
 
-			.goToContact {
-				cursor: pointer;
+			.containerAction {
 				display: flex;
-				align-items: center;
-				font-size: 0.9rem;
-				font-weight: 500;
-				color: $white;
-				letter-spacing: 0.05rem;
-				width: max-content;
+				justify-content: space-between;
 
-				svg {
-					transition: transform 0.3s ease-in-out;
-				}
+				.goToContact,
+				.followMe {
+					cursor: pointer;
+					display: flex;
+					align-items: center;
+					font-size: 0.9rem;
+					font-weight: 500;
+					color: $white;
+					letter-spacing: 0.05rem;
+					width: max-content;
 
-				&:hover {
+					.arrow2 {
+						transition: transform 0.3s ease-in-out;
+					}
+
+					.heart {
+						transition: transform 0.2s ease-in-out;
+					}
+
+					&:hover {
+						.arrow2 {
+							transform: translateX(0.5rem);
+						}
+					}
+
+					&:hover {
+						.heart {
+							transform: scale(1.2);
+
+							path {
+								stroke: $red-warning;
+							}
+						}
+					}
+
 					svg {
-						transform: translateX(0.5rem);
+						width: 1rem;
+						height: 1rem;
+						margin-left: 0.5rem;
+
+						&.heart {
+							width: 1.3rem;
+							height: 1.3rem;
+
+							path {
+								fill: $red-warning;
+							}
+						}
+
+						path {
+							fill: $white;
+						}
 					}
 				}
 
-				svg {
-					width: 1rem;
-					height: 1rem;
-					margin-left: 0.5rem;
-
-					path {
-						fill: $white;
-					}
+				.followMe {
+					margin-right: 4rem;
 				}
 			}
 		}
