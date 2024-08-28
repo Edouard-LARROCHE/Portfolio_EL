@@ -125,7 +125,7 @@ const NavBar = () => {
 					{isPopupOpen.thirdButton && (
 						<Popup
 							target="shared"
-							size="medium"
+							size="small"
 							stopPropagation={(e) => e.stopPropagation()}
 							onMouseEnter={() =>
 								handleDisplayPopup("thirdButton", true)

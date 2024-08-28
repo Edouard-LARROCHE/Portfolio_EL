@@ -5,6 +5,8 @@ import {
 	Navigate,
 } from "react-router-dom"
 
+import { Toaster } from "sonner"
+
 import Layout from "./layout/Layout"
 import Activity from "./pages/activity/activity"
 import Projects from "./pages/projects/projects"
@@ -14,6 +16,19 @@ function App() {
 	return (
 		<div className="App">
 			<Router>
+				<Toaster
+					richColors
+					closeButton
+					expand={false}
+					position="bottom-right"
+					toastOptions={{
+						style: {
+							background: "rgb(80, 70, 229)",
+							color: "rgb(255, 255, 255)",
+							border: "none",
+						},
+					}}
+				/>
 				<Routes>
 					<Route path="/" element={<Layout />}>
 						<Route index element={<Navigate to="/home" />} />

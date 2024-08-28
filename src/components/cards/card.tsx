@@ -20,6 +20,13 @@ import DefaultLogo from "../../assets/icons/logo.svg?react"
 import Apple from "../../assets/icons/apple.svg?react"
 import LockSelf from "../../assets/projects/icons/lockself.svg?react"
 
+import Archi from "../../assets/icons/activity/archi.svg?react"
+import Merge from "../../assets/icons/activity/merge.svg?react"
+import Other1 from "../../assets/icons/activity/other-1.svg?react"
+import Polygon from "../../assets/icons/activity/polygon.svg?react"
+import Stars from "../../assets/icons/activity/stars.svg?react"
+import Triangle from "../../assets/icons/activity/triangle-down.svg?react"
+
 import "./card.scss"
 
 const Card = ({ data, loading, updatedProjects, target }: CardProps) => {
@@ -68,6 +75,20 @@ const Card = ({ data, loading, updatedProjects, target }: CardProps) => {
 								<Apple className="logo apple" />
 							) : project?.logo === "lockself.svg" ? (
 								<LockSelf className="logo LS" />
+							) : project?.logo === "other1" ? (
+								<Archi className="archiLogo" />
+							) : project?.logo === "other2" ? (
+								<Merge className="defaultLogo" />
+							) : project?.logo === "other3" ? (
+								<Other1 className="otherLogo" />
+							) : project?.logo === "other4" ? (
+								<Polygon className="polygonLogo" />
+							) : project?.logo === "other5" ? (
+								<Stars className="starsLogo" />
+							) : project?.logo === "other6" ? (
+								<Triangle className="triangleDownLogo" />
+							) : project?.logo === "other7" ? (
+								<Other1 className="otherLogo" />
 							) : null}
 						</div>
 						<div className="topCardContainer">

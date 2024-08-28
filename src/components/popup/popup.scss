@@ -25,6 +25,11 @@
 		height: 30rem;
 	}
 
+	&.small {
+		width: 40rem;
+		height: 18rem;
+	}
+
 	.popupContainerContent {
 		display: grid;
 		grid-template-columns: 1fr 50%;
@@ -53,9 +58,44 @@
 			}
 		}
 
+		&.shared {
+			grid-template-columns: 1fr;
+		}
+
 		.contentLeft {
 			grid-column: 1;
 			grid-row: 1;
+
+			.goToContact {
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				font-size: 0.9rem;
+				font-weight: 500;
+				color: $white;
+				letter-spacing: 0.05rem;
+				width: max-content;
+
+				svg {
+					transition: transform 0.3s ease-in-out;
+				}
+
+				&:hover {
+					svg {
+						transform: translateX(0.5rem);
+					}
+				}
+
+				svg {
+					width: 1rem;
+					height: 1rem;
+					margin-left: 0.5rem;
+
+					path {
+						fill: $white;
+					}
+				}
+			}
 		}
 
 		.contentRight {
@@ -76,14 +116,19 @@
 
 		.text {
 			font-size: 1.3rem;
-			font-weight: 400;
+			font-weight: lighter;
 			color: $white;
-			opacity: 0.8;
+			opacity: 0.7;
 			letter-spacing: 0.05rem;
 		}
 
 		ul {
 			margin-left: -2.5rem;
+
+			&.shared {
+				display: flex;
+				justify-content: space-between;
+			}
 
 			li {
 				display: flex;
@@ -93,6 +138,10 @@
 				&.discover {
 					cursor: pointer;
 					margin: 0;
+
+					&.active {
+						cursor: default;
+					}
 				}
 
 				.iconUseCase {
@@ -141,6 +190,10 @@
 						color: $white;
 						letter-spacing: 0.05rem;
 						margin-bottom: 0.5rem;
+
+						&.active {
+							opacity: 0.5;
+						}
 					}
 
 					.textDown {
@@ -149,6 +202,32 @@
 						color: $white;
 						opacity: 0.7;
 						letter-spacing: 0.05rem;
+					}
+				}
+
+				.containerIcon {
+					cursor: pointer;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					min-width: 4.5rem;
+					min-height: 4.5rem;
+					border-radius: 0.5rem;
+					background-color: $blue-lagoon;
+					margin: -1.5rem 1rem 1rem 0;
+					opacity: 0.7;
+
+					&:hover {
+						opacity: 1;
+					}
+
+					svg {
+						width: 2.5rem;
+						height: 2.5rem;
+
+						path {
+							fill: $white;
+						}
 					}
 				}
 			}
