@@ -6,8 +6,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 22rem;
-	height: 13rem;
+	width: 15rem;
+	height: 11rem;
 	border-radius: 0.5rem;
 	border: 0.01rem solid $grey-grey;
 	background-color: $blue-sky-space-light-opacity;
@@ -19,7 +19,7 @@
 		cursor: default;
 		overflow: hidden;
 		position: relative;
-		margin-top: 5rem;
+		margin-top: 3rem;
 		width: 30rem;
 		min-height: 15rem;
 		background: linear-gradient(
@@ -41,10 +41,10 @@
 			display: flex;
 
 			.card-logo {
-				min-width: 6rem;
-				min-height: 6rem;
-				max-height: 6rem;
-				max-width: 6rem;
+				min-width: 4.5rem;
+				min-height: 4.5rem;
+				max-height: 4.5rem;
+				max-width: 4.5rem;
 				border-radius: 0.5rem;
 				background-color: transparent;
 				margin-right: 1rem;
@@ -55,7 +55,7 @@
 					background-color: transparent;
 
 					.defaultLogo {
-						width: 5rem;
+						width: 4rem;
 
 						g {
 							polygon {
@@ -70,8 +70,8 @@
 						}
 
 						&.LS {
-							width: 5rem;
-							height: 5rem;
+							width: 4.5rem;
+							height: 4.5rem;
 
 							path {
 								fill: $blue-sky-space;
@@ -141,29 +141,33 @@
 
 				.card-title {
 					white-space: nowrap;
-					width: 10rem;
-					font-size: 1.5rem;
+					width: 7rem;
+					font-size: 1.2rem;
 				}
 
 				.icon {
-					margin: 0.5rem 0 0 -0.5rem;
+					margin: 0.3rem 0 0 -0.5rem;
 					width: 2.5rem;
 					height: 2.5rem;
 					display: flex;
 					align-items: center;
 
 					.fork-count {
-						font-size: 1.3rem;
+						font-size: 1.1rem;
 						font-weight: 600;
 						color: $white;
 					}
+				}
+
+				.language-container {
+					font-size: 0.7rem;
 				}
 			}
 		}
 
 		.card-text {
 			margin-top: 0.7rem;
-			font-size: 1rem;
+			font-size: 0.7rem;
 		}
 	}
 
