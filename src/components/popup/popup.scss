@@ -17,17 +17,17 @@
 
 	&.large {
 		width: 80rem;
-		height: 40rem;
+		height: 32rem;
 	}
 
 	&.medium {
-		width: 60rem;
+		width: 50rem;
 		height: 30rem;
 	}
 
 	&.small {
-		width: 40rem;
-		height: 18rem;
+		width: 35rem;
+		height: 15rem;
 	}
 
 	.popupContainerContent {
@@ -37,7 +37,6 @@
 		gap: 1rem;
 		width: 100%;
 		height: 100%;
-		padding: 1rem;
 
 		&.discover {
 			grid-template-columns: repeat(3, 1fr);
@@ -75,7 +74,7 @@
 					cursor: pointer;
 					display: flex;
 					align-items: center;
-					font-size: 0.9rem;
+					font-size: 0.7rem;
 					font-weight: 500;
 					color: $white;
 					letter-spacing: 0.05rem;
@@ -111,8 +110,8 @@
 						margin-left: 0.5rem;
 
 						&.heart {
-							width: 1.3rem;
-							height: 1.3rem;
+							width: 1.2rem;
+							height: 1.2rem;
 
 							path {
 								fill: $red-warning;
@@ -137,7 +136,7 @@
 		}
 
 		.title {
-			font-size: 1.1rem;
+			font-size: 1rem;
 			color: $grey-light;
 			letter-spacing: 0.05rem;
 			margin-bottom: 3rem;
@@ -149,8 +148,9 @@
 
 		.text,
 		p {
+			line-height: 1.1rem;
 			font-family: Arial, sans-serif;
-			font-size: 1rem;
+			font-size: 0.9rem;
 			font-weight: lighter;
 			color: $white;
 			opacity: 0.7;
@@ -183,11 +183,11 @@
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					min-width: 4.5rem;
-					min-height: 4.5rem;
+					min-width: 3.5rem;
+					min-height: 3.5rem;
 					border-radius: 50%;
 					background-color: $blue-lagoon;
-					margin: 0 1rem 1rem 0;
+					margin: 0 0.8rem 0.8rem 0;
 
 					&.discover {
 						background-color: transparent;
@@ -196,8 +196,8 @@
 					}
 
 					svg {
-						width: 2.5rem;
-						height: 2.5rem;
+						width: 2rem;
+						height: 2rem;
 
 						path {
 							fill: $white;
@@ -220,7 +220,7 @@
 					}
 
 					.textUp {
-						font-size: 1.3rem;
+						font-size: 1rem;
 						font-weight: 500;
 						color: $white;
 						letter-spacing: 0.05rem;
@@ -232,7 +232,7 @@
 					}
 
 					.textDown {
-						font-size: 1rem;
+						font-size: 0.8rem;
 						font-weight: 400;
 						color: $white;
 						opacity: 0.7;
@@ -245,11 +245,11 @@
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					min-width: 4.5rem;
-					min-height: 4.5rem;
+					min-width: 3.5rem;
+					min-height: 3.5rem;
 					border-radius: 0.5rem;
 					background-color: $blue-lagoon;
-					margin: -1.5rem 1rem 1rem 0;
+					margin: -1.5rem 0.5rem 0.5rem 0;
 					opacity: 0.7;
 
 					&:hover {
@@ -257,8 +257,8 @@
 					}
 
 					svg {
-						width: 2.5rem;
-						height: 2.5rem;
+						width: 2rem;
+						height: 2rem;
 
 						path {
 							fill: $white;

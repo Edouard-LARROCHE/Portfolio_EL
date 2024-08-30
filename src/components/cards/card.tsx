@@ -94,7 +94,7 @@ const Card = ({ data, loading, updatedProjects, target }: CardProps) => {
 						<div className="topCardContainer">
 							<div className="card-title">
 								{capitalizeFirstLetter(
-									truncate(data ? data.name : "", 15),
+									truncate(data ? data.name : "", 11),
 								)}
 							</div>
 							<div className="icon">
