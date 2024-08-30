@@ -1,0 +1,12 @@
+@use "../../../../scss/config/primitives" as *;
+@use "../../../../scss//animations//animations.scss" as *;
+
+.loaderBar {
+	height: 0.05rem;
+	width: 20rem;
+	--c: no-repeat linear-gradient(rgb(80, 70, 229) 0 0);
+	background: var(--c), var(--c), $blue-sky-space-light;
+	background-size: 60% 100%;
+	animation: loaderBar 5s infinite;
+}
+
