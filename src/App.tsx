@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react"
 import {
 	BrowserRouter as Router,
 	Route,
@@ -11,8 +12,26 @@ import Layout from "./layout/Layout"
 import Activity from "./pages/activity/activity"
 import Projects from "./pages/projects/projects"
 import Contact from "./pages/contact/contact"
+import ScreenSizeWarning from "./pages/screenSizeWarning/screenSizeWarning"
 
 function App() {
+	const [isScreenTooSmall, setIsScreenTooSmall] = useState(false)
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsScreenTooSmall(window.innerWidth < 1100)
+		}
+		handleResize()
+
+		window.addEventListener("resize", handleResize)
+
+		return () => window.removeEventListener("resize", handleResize)
+	}, [])
+
+	if (isScreenTooSmall) {
+		return <ScreenSizeWarning />
+	}
+
 	return (
 		<div className="App">
 			<Router>

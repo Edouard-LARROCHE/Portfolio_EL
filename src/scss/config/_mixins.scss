@@ -1,3 +1,18 @@
+@use "./functions" as *;
+
 @mixin rotate($deg) {
 	transform: rotate($deg);
 }
+
+@mixin bigScreen {
+	@media (min-width: convertToREM(1200)) {
+		@content;
+	}
+}
+
+@mixin mobileScreen {
+	@media (max-width: convertToREM(576)) {
+		@content;
+	}
+}
+

@@ -1,0 +1,17 @@
+@use "../../scss/config/primitives" as *;
+
+.screenSizeWarning {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	.text {
+		font-size: 1.5rem;
+		color: $white;
+		margin-bottom: 2rem;
+	}
+}
+
