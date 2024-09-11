@@ -22,6 +22,7 @@ const Activity = () => {
 	const [commitsByProject, setCommitsByProject] = useState<any>({})
 
 	const repos = [
+		"Le-11-Marseille",
 		"Portfolio_EL",
 		"Lock-self",
 		"Maison-Morin",
