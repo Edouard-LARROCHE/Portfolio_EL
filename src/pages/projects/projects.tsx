@@ -7,6 +7,7 @@ import dataProjects from "../../data/data.projects.json"
 import MarsBot from "../../assets/projects/img/mars-bot.png"
 import WCS from "../../assets/projects/img/wildcodeschool.png"
 import MM from "../../assets/projects/img/maison-morin.png"
+import Le11 from "../../assets/projects/img/le11.png"
 
 import "./projects.scss"
 
@@ -18,6 +19,7 @@ const Projects = ({ repos, loading }: ProjectsProps) => {
 		"apple.svg": "",
 		"lockself.svg": "",
 		"maison-morin.png": MM,
+		"le11-marseille.png": Le11,
 	}
 	const initialProjects = dataProjects.projects.map((project) => {
 		if (project.logo) {
