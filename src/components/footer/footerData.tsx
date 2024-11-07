@@ -1,5 +1,7 @@
 import type { FooterDataProps } from "./types"
+
 import LoadingText from "../animations/loader/loaderText"
+
 import "./footerData.scss"
 
 const FooterData = ({

@@ -14,12 +14,18 @@ import Projects from "./pages/projects/projects"
 import Contact from "./pages/contact/contact"
 import ScreenSizeWarning from "./pages/screenSizeWarning/screenSizeWarning"
 
+import LayoutMobile from "./pages/mobile"
+
 function App() {
 	const [isScreenTooSmall, setIsScreenTooSmall] = useState(false)
+	const [mobileScreen, setMobileScreen] = useState(false)
 
 	useEffect(() => {
 		const handleResize = () => {
-			setIsScreenTooSmall(window.innerWidth < 1100)
+			setIsScreenTooSmall(window.innerWidth < 390)
+			setMobileScreen(
+				window.innerWidth >= 390 && window.innerWidth < 1100,
+			)
 		}
 		handleResize()
 
@@ -30,6 +36,10 @@ function App() {
 
 	if (isScreenTooSmall) {
 		return <ScreenSizeWarning />
+	}
+
+	if (mobileScreen) {
+		return <LayoutMobile />
 	}
 
 	return (
