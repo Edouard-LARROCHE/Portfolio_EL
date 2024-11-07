@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react"
 import {
 	BrowserRouter as Router,
 	Route,
@@ -7,6 +6,7 @@ import {
 } from "react-router-dom"
 
 import { Toaster } from "sonner"
+import { useScreenSize } from "./context/hooks/customHooks"
 
 import Layout from "./layout/Layout"
 import Activity from "./pages/activity/activity"
@@ -17,28 +17,13 @@ import ScreenSizeWarning from "./pages/screenSizeWarning/screenSizeWarning"
 import LayoutMobile from "./pages/mobile"
 
 function App() {
-	const [isScreenTooSmall, setIsScreenTooSmall] = useState(false)
-	const [mobileScreen, setMobileScreen] = useState(false)
+	const screenSize = useScreenSize()
 
-	useEffect(() => {
-		const handleResize = () => {
-			setIsScreenTooSmall(window.innerWidth < 390)
-			setMobileScreen(
-				window.innerWidth >= 390 && window.innerWidth < 1100,
-			)
-		}
-		handleResize()
-
-		window.addEventListener("resize", handleResize)
-
-		return () => window.removeEventListener("resize", handleResize)
-	}, [])
-
-	if (isScreenTooSmall) {
+	if (screenSize === "tooSmall") {
 		return <ScreenSizeWarning />
 	}
 
-	if (mobileScreen) {
+	if (screenSize === "mobile") {
 		return <LayoutMobile />
 	}
 
