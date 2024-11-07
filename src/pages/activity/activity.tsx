@@ -68,7 +68,13 @@ const Activity: React.FC<ActivityProps> = ({ scrollableRef }) => {
 		)
 			.then((commits) => {
 				const allCommits = commits.flat()
-				setActivity(allCommits)
+				const sortedCommits = allCommits.sort(
+					(a, b) =>
+						new Date(b.commit.committer.date).getTime() -
+						new Date(a.commit.committer.date).getTime(),
+				)
+
+				setActivity(sortedCommits)
 				setLoading(false)
 
 				const groupedCommits = allCommits.reduce(
