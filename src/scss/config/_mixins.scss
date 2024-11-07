@@ -16,3 +16,9 @@
 	}
 }
 
+@mixin mobilesScreen {
+	@media (min-width: convertToREM(390)) and (max-width: convertToREM(1100)) {
+		@content;
+	}
+}
+
