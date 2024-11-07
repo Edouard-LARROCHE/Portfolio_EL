@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
 
 import { getGithubReposWithLanguages } from "../../services/services"
@@ -21,6 +21,8 @@ const RightSide = () => {
 	>(null)
 	const [repos, setRepos] = useState<ReposProps>([])
 	const [loading, setLoading] = useState(true)
+
+	const scrollableRef = useRef<HTMLDivElement>(null)
 
 	const buttonsActions = [
 		{
@@ -85,7 +87,7 @@ const RightSide = () => {
 	const renderActiveComponent = () => {
 		switch (activeComponent) {
 			case "activity":
-				return <Activity />
+				return <Activity scrollableRef={scrollableRef} />
 			case "projects":
 				return <Projects repos={repos} loading={loading} />
 			case "contact":
@@ -96,7 +98,7 @@ const RightSide = () => {
 	}
 
 	return (
-		<div className="rightPart">
+		<div className="rightPart" ref={scrollableRef}>
 			<div className="top">
 				<div className="buttonContainer">
 					{buttonsActions.map((button) => (
