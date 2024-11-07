@@ -1,5 +1,6 @@
 @use "../../scss/config/functions" as *;
 @use "../../scss/config/primitives" as *;
+@use "../../scss//config//mixins" as *;
 
 .footerDataContainer {
 	position: absolute;
@@ -43,6 +44,22 @@
 						font-size: 1.1rem;
 						opacity: 0.9;
 					}
+				}
+			}
+		}
+	}
+}
+
+@include mobilesScreen {
+	.footerDataContainer {
+		bottom: 6rem;
+
+		.footerData {
+			ul {
+				flex-wrap: wrap;
+
+				li {
+					margin: 1rem;
 				}
 			}
 		}
