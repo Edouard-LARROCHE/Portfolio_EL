@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react"
 
+import { ActivityProps } from "./types"
+
 import { TimeActivity } from "../../utils/utils"
 import { getGithubActivity } from "../../services/services"
 
 import LoadingText from "../../components/animations/loader/loaderText"
 import Card from "../../components/cards/card"
+import ScrollToTop from "../../components/scroller/scrollToTop"
 
 import DefaultLogo from "../../assets/icons/logo.svg?react"
 import MergedLogo from "../../assets/icons/activity/merge.svg?react"
@@ -16,7 +19,7 @@ import TriangleDown from "../../assets/icons/activity/triangle-down.svg?react"
 
 import "./activity.scss"
 
-const Activity = () => {
+const Activity: React.FC<ActivityProps> = ({ scrollableRef }) => {
 	const [activity, setActivity] = useState<any>([])
 	const [loading, setLoading] = useState(true)
 	const [commitsByProject, setCommitsByProject] = useState<any>({})
@@ -175,6 +178,7 @@ const Activity = () => {
 							</>
 						))}
 			</div>
+			<ScrollToTop scrollableRef={scrollableRef} />
 		</div>
 	)
 }

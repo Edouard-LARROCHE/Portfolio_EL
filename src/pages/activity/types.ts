@@ -1,5 +1,6 @@
 export type ActivityProps = {
-	repos: {
+	scrollableRef?: React.RefObject<HTMLDivElement>
+	repos?: {
 		id: number
 		name: string
 		forks_count: number
@@ -9,5 +10,9 @@ export type ActivityProps = {
 		html_url: string
 		languages: Record<string, number>
 	}[]
+}
+
+export type ActicityRef = {
+	scrollableRef?: React.RefObject<HTMLDivElement>
 }
 
