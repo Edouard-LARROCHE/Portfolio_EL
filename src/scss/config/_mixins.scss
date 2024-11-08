@@ -23,7 +23,7 @@
 }
 
 @mixin landScapeScreen {
-	@media (orientation: landscape) {
+	@media ((min-width: convertToREM(700)) and (max-width: convertToREM(1200))) {
 		@content;
 	}
 }
