@@ -78,7 +78,7 @@ const Input = () => {
 					autoFocus
 					className={`input ${!isEmailValid ? "invalid" : ""}`}
 					type="text"
-					placeholder="Email address"
+					placeholder="Your email address"
 				/>
 				<div className="errorMessage">{error}</div>
 				<div className="inputDivider">

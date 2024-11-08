@@ -38,6 +38,19 @@ function App() {
 	if (screenSize === "mobile") {
 		return (
 			<Router>
+				<Toaster
+					richColors
+					closeButton
+					expand={false}
+					position="bottom-right"
+					toastOptions={{
+						style: {
+							background: "rgb(80, 70, 229)",
+							color: "rgb(255, 255, 255)",
+							border: "none",
+						},
+					}}
+				/>
 				<Routes>
 					<Route path="/" element={<LayoutMobile />}>
 						{renderRoutes()}

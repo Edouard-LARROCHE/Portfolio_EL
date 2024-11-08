@@ -1,4 +1,5 @@
 import { useState, useRef } from "react"
+import { useScreenSize } from "../../context/hooks/customHooks"
 
 import type { Button } from "./types"
 import Popup from "../popup/popup"
@@ -9,6 +10,8 @@ import Arrow from "../../assets/icons/arrow.svg?react"
 import "./navBar.scss"
 
 const NavBar = () => {
+	const screenSize = useScreenSize()
+
 	const [isPopupOpen, setIsPopupOpen] = useState<Record<Button, boolean>>({
 		firstButton: false,
 		secondButton: false,
@@ -44,9 +47,11 @@ const NavBar = () => {
 	return (
 		<div className="containerNavBar">
 			<div className="navBar">
-				<div className="logo">
-					<Logo />
-				</div>
+				{screenSize !== "mobile" && (
+					<div className="logo">
+						<Logo />
+					</div>
+				)}
 				<div
 					id="firstButton"
 					className={`containerButton ${isPopupOpen.firstButton ? "open" : ""}`}

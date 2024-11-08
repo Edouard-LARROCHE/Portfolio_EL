@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import { useScreenSize } from "../../context/hooks/customHooks"
 
 import { getGithubProfile, getGithubRepos } from "../../services/services"
 
@@ -13,8 +12,6 @@ import ConstellationSVG from "../../assets/icons/constellation.svg?react"
 import "./index.scss"
 
 const LeftSide = () => {
-	const screenSize = useScreenSize()
-
 	const [profile, setProfile] = useState(null)
 	const [repos, setRepos] = useState(null)
 	const [loadingData, setLoadingData] = useState(true)
@@ -34,7 +31,7 @@ const LeftSide = () => {
 
 	return (
 		<div className="leftPart">
-			{screenSize === "desktop" && <NavBar />}
+			<NavBar />
 			<div className="constellation">
 				<ConstellationSVG />
 			</div>
