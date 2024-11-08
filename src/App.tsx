@@ -19,12 +19,32 @@ import LayoutMobile from "./pages/mobile"
 function App() {
 	const screenSize = useScreenSize()
 
+	const renderRoutes = () => (
+		<>
+			<Route index element={<Navigate to="/home" />} />
+			<Route path="/home/activity" element={<Activity />} />
+			<Route
+				path="/home/projects"
+				element={<Projects repos={[]} loading={false} />}
+			/>
+			<Route path="/home/contact" element={<Contact />} />
+		</>
+	)
+
 	if (screenSize === "tooSmall") {
 		return <ScreenSizeWarning />
 	}
 
 	if (screenSize === "mobile") {
-		return <LayoutMobile />
+		return (
+			<Router>
+				<Routes>
+					<Route path="/" element={<LayoutMobile />}>
+						{renderRoutes()}
+					</Route>
+				</Routes>
+			</Router>
+		)
 	}
 
 	return (
@@ -45,13 +65,7 @@ function App() {
 				/>
 				<Routes>
 					<Route path="/" element={<Layout />}>
-						<Route index element={<Navigate to="/home" />} />
-						<Route path="/home/activity" element={<Activity />} />
-						<Route
-							path="/home/projects"
-							element={<Projects repos={[]} loading={false} />}
-						/>
-						<Route path="/home/contact" element={<Contact />} />
+						{renderRoutes()}
 					</Route>
 				</Routes>
 			</Router>

@@ -17,7 +17,13 @@
 }
 
 @mixin mobilesScreen {
-	@media (min-width: convertToREM(390)) and (max-width: convertToREM(1100)) {
+	@media (min-width: convertToREM(390)) and (max-width: convertToREM(700)) {
+		@content;
+	}
+}
+
+@mixin landScapeScreen {
+	@media (orientation: landscape) {
 		@content;
 	}
 }
