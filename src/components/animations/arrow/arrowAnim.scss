@@ -1,6 +1,7 @@
 @use "../../../scss/animations/animations.scss" as *;
 @use "../../../scss/config/primitives" as *;
 @use "../../../scss/config/functions" as *;
+@use "../../../scss/config/mixins" as *;
 
 .arrow {
 	cursor: pointer;
@@ -13,8 +14,8 @@
 
 .arrow span {
 	display: block;
-	width: 3vw;
-	height: 3vw;
+	width: 2.5vw;
+	height: 2.5vw;
 	border-bottom: convertToREM(3) solid $green-custom;
 	border-right: convertToREM(3) solid $green-custom;
 	transform: rotate(45deg);
@@ -28,5 +29,12 @@
 
 .arrow span:nth-child(3) {
 	animation-delay: -0.4s;
+}
+
+@include landScapeScreen {
+	.arrow span {
+		width: 1.5vw;
+		height: 1.5vw;
+	}
 }
 

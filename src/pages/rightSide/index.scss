@@ -1,5 +1,6 @@
 @use "../../scss/config/primitives" as *;
 @use "../../scss/config/functions" as *;
+@use "../../scss/config/mixins" as *;
 
 .rightPart {
 	position: absolute;
@@ -49,6 +50,23 @@
 				height: convertToREM(1);
 				background-color: $white;
 				opacity: 0.2;
+			}
+		}
+	}
+}
+
+@include mobilesScreen {
+	.rightPart {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		.measureContainer {
+			left: 0;
+
+			.linesWrapper {
+				left: convertToREM(2);
 			}
 		}
 	}
