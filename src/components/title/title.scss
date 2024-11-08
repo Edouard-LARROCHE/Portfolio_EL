@@ -32,7 +32,7 @@
 @include mobilesScreen {
 	.containerTitle {
 		justify-content: start;
-		margin-top: 6rem;
+		padding-top: 5rem;
 
 		.title {
 			font-size: 4rem;
@@ -52,7 +52,8 @@
 
 @include landScapeScreen {
 	.containerTitle {
-		margin-top: -2rem;
+		justify-content: start;
+		padding-top: 3rem;
 
 		.title {
 			font-size: 4rem;
