@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react"
+import { useLocation } from "react-router-dom"
+
+import { useScreenSize } from "../../context/hooks/customHooks"
 
 import { ActivityProps } from "../../pages/activity/types"
 
 import "./scrollToTop.scss"
 
 const ScrollToTop: React.FC<ActivityProps> = ({ scrollableRef }) => {
+	const screenSize = useScreenSize()
+	const location = useLocation()
+
 	const [isVisible, setIsVisible] = useState(false)
 
 	useEffect(() => {
@@ -38,7 +44,7 @@ const ScrollToTop: React.FC<ActivityProps> = ({ scrollableRef }) => {
 
 	return (
 		<div
-			className={`scrollToTopContainer ${isVisible ? "visible" : ""}`}
+			className={`scrollToTopContainer ${isVisible ? "visible" : ""} ${screenSize === "desktop" && location.pathname === "/home/projects" ? "customPosition" : ""}`}
 			onClick={scrollToTop}
 		>
 			<div className="scrollTop" />

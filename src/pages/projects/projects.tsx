@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react"
+
 import type { ProjectsProps } from "./types"
 
+import ScrollToTop from "../../components/scroller/scrollToTop"
 import Card from "../../components/cards/card"
+
 import dataProjects from "../../data/data.projects.json"
 
 import MarsBot from "../../assets/projects/img/mars-bot.png"
@@ -11,7 +14,7 @@ import Le11 from "../../assets/projects/img/le11.png"
 
 import "./projects.scss"
 
-const Projects = ({ repos, loading }: ProjectsProps) => {
+const Projects = ({ repos, loading, scrollableRef }: ProjectsProps) => {
 	const images: { [key: string]: string | null } = {
 		"": null,
 		"mars-bot.png": MarsBot,
@@ -76,6 +79,7 @@ const Projects = ({ repos, loading }: ProjectsProps) => {
 							/>
 						</div>
 					))}
+			<ScrollToTop scrollableRef={scrollableRef} />
 		</div>
 	)
 }

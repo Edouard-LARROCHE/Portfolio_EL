@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
 
+import { useScreenSize } from "../../context/hooks/customHooks"
+
 import { getGithubReposWithLanguages } from "../../services/services"
 
 import Buttons from "../../components/buttons/buttons"
@@ -13,6 +15,7 @@ import type { ReposProps } from "../../types/types"
 import "./index.scss"
 
 const RightSide = () => {
+	const screenSize = useScreenSize()
 	const navigate = useNavigate()
 	const location = useLocation()
 
@@ -53,7 +56,11 @@ const RightSide = () => {
 			location.pathname === "/home/projects" ||
 			location.pathname === "/home/activity"
 		) {
-			setActiveComponent("projects")
+			if (screenSize === "mobile") {
+				setActiveComponent("activity")
+			} else {
+				setActiveComponent("projects")
+			}
 
 			getGithubReposWithLanguages().then((repos: ReposProps) => {
 				setRepos(repos)
@@ -61,8 +68,14 @@ const RightSide = () => {
 			})
 		}
 
-		if (location.pathname === "/home/activity") {
-			setActiveComponent("activity")
+		if (screenSize === "mobile") {
+			if (location.pathname === "/home/projects") {
+				setActiveComponent("projects")
+			}
+		} else {
+			if (location.pathname === "/home/activity") {
+				setActiveComponent("activity")
+			}
 		}
 
 		if (location.pathname === "/home/contact") {
@@ -89,7 +102,13 @@ const RightSide = () => {
 			case "activity":
 				return <Activity scrollableRef={scrollableRef} />
 			case "projects":
-				return <Projects repos={repos} loading={loading} />
+				return (
+					<Projects
+						repos={repos}
+						loading={loading}
+						scrollableRef={scrollableRef}
+					/>
+				)
 			case "contact":
 				return <Contact />
 			default:

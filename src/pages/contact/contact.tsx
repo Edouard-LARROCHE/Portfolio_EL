@@ -1,8 +1,13 @@
+import { useScreenSize } from "../../context/hooks/customHooks"
+
 import Input from "../../components/input/input"
+import CopyRight from "../../components/copyRight"
 
 import "./contact.scss"
 
 const Contact = () => {
+	const screenSize = useScreenSize()
+
 	return (
 		<div className="containerContact">
 			<div className="containerText">
@@ -22,6 +27,7 @@ const Contact = () => {
 				</div>
 			</div>
 			<Input />
+			{screenSize !== "desktop" && <CopyRight />}
 		</div>
 	)
 }
