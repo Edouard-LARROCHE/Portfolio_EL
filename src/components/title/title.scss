@@ -50,3 +50,23 @@
 	}
 }
 
+@include landScapeScreen {
+	.containerTitle {
+		margin-top: -2rem;
+
+		.title {
+			font-size: 4rem;
+		}
+
+		.subtitle {
+			font-size: 3rem;
+		}
+
+		.desc {
+			margin: 0 0 2rem;
+			width: 100%;
+			font-size: 1rem;
+		}
+	}
+}
+
