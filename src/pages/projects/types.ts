@@ -1,4 +1,5 @@
 export type ProjectsProps = {
+	scrollableRef?: React.RefObject<HTMLDivElement>
 	loading: boolean
 	repos: {
 		id: number
