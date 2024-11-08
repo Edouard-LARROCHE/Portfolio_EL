@@ -1,5 +1,6 @@
 @use "../../scss/config/primitives" as *;
 @use "../../scss/config/functions" as *;
+@use "../../scss/config/mixins" as *;
 
 .cardContainer {
 	cursor: pointer;
@@ -28,6 +29,11 @@
 			rgba(42, 21, 121, 1) 50%,
 			rgba(19, 11, 49, 1) 100%
 		);
+
+		@include mobilesScreen {
+			width: calc(100% - 2rem);
+			min-height: 12rem;
+		}
 	}
 
 	&:hover {
@@ -185,6 +191,11 @@
 			height: 14rem;
 			border-radius: 50%;
 			object-fit: cover;
+
+			@include mobilesScreen {
+				width: 10rem;
+				height: 10rem;
+			}
 		}
 
 		.icons {
@@ -195,6 +206,11 @@
 				height: 3.5rem;
 				transform-style: preserve-3d;
 				transform: rotateY(210deg);
+
+				@include mobilesScreen {
+					width: 2.5rem;
+					height: 2.5rem;
+				}
 
 				path {
 					fill: $grey-snow;
@@ -208,6 +224,11 @@
 				width: 4rem;
 				height: 4rem;
 
+				@include mobilesScreen {
+					width: 3rem;
+					height: 3rem;
+				}
+
 				path {
 					fill: $blue-sky-space;
 				}
@@ -219,6 +240,12 @@
 				bottom: 0rem;
 				width: 4.5rem;
 				height: 4.5rem;
+
+				@include mobilesScreen {
+					width: 3.5rem;
+					height: 3.5rem;
+					left: 5rem;
+				}
 
 				path {
 					fill: $red-warning;
@@ -232,6 +259,12 @@
 				width: 5.5rem;
 				height: 5.5rem;
 
+				@include mobilesScreen {
+					width: 4rem;
+					height: 4rem;
+					right: 5rem;
+				}
+
 				path {
 					fill: $green-custom;
 				}
@@ -244,6 +277,11 @@
 				width: 2.5rem;
 				height: 2.5rem;
 
+				@include mobilesScreen {
+					width: 1.5rem;
+					height: 1.5rem;
+				}
+
 				path {
 					fill: $indicator-warning;
 				}
@@ -255,6 +293,12 @@
 				top: 5.5rem;
 				width: 4rem;
 				height: 4rem;
+
+				@include mobilesScreen {
+					top: 4rem;
+					width: 3rem;
+					height: 3rem;
+				}
 			}
 		}
 	}

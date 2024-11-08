@@ -60,7 +60,9 @@ const LayoutMobile = () => {
 			<div className="side-container">
 				<RightSide />
 			</div>
-			{!showRightSide && <ArrowAnim onClick={toggleSide} />}
+			<div className="toggle-arrow">
+				{!showRightSide && <ArrowAnim onClick={toggleSide} />}
+			</div>
 		</div>
 	)
 }

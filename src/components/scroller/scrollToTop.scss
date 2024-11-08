@@ -1,4 +1,5 @@
 @use "../../scss/config/primitives" as *;
+@use "../../scss/config/mixins" as *;
 
 .scrollToTopContainer {
 	cursor: pointer;
@@ -8,6 +9,10 @@
 	transition: all 0.3s ease-in-out;
 	opacity: 0;
 	pointer-events: none;
+
+	@include mobileScreen {
+		right: 1.5rem;
+	}
 
 	&.visible {
 		bottom: 5rem;
