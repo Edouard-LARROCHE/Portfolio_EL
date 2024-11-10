@@ -81,37 +81,39 @@ const NavBar = () => {
 						/>
 					)}
 				</div>
-				<div
-					id="secondButton"
-					className={`containerButton ${isPopupOpen.secondButton ? "open" : ""}`}
-					onClick={() => handleClickClosePopup("secondButton")}
-					onMouseEnter={() =>
-						handleDisplayPopup("secondButton", true)
-					}
-					onMouseLeave={() =>
-						handleDisplayPopup("secondButton", false)
-					}
-				>
-					<div className="text">Discover</div>
+				{screenSize !== "mobile" && (
 					<div
-						className={`icon ${isPopupOpen.secondButton ? "open" : ""}`}
+						id="secondButton"
+						className={`containerButton ${isPopupOpen.secondButton ? "open" : ""}`}
+						onClick={() => handleClickClosePopup("secondButton")}
+						onMouseEnter={() =>
+							handleDisplayPopup("secondButton", true)
+						}
+						onMouseLeave={() =>
+							handleDisplayPopup("secondButton", false)
+						}
 					>
-						<Arrow />
+						<div className="text">Discover</div>
+						<div
+							className={`icon ${isPopupOpen.secondButton ? "open" : ""}`}
+						>
+							<Arrow />
+						</div>
+						{isPopupOpen.secondButton && (
+							<Popup
+								target="discover"
+								size="medium"
+								stopPropagation={(e) => e.stopPropagation()}
+								onMouseEnter={() =>
+									handleDisplayPopup("secondButton", true)
+								}
+								onMouseLeave={() =>
+									handleDisplayPopup("secondButton", false)
+								}
+							/>
+						)}
 					</div>
-					{isPopupOpen.secondButton && (
-						<Popup
-							target="discover"
-							size="medium"
-							stopPropagation={(e) => e.stopPropagation()}
-							onMouseEnter={() =>
-								handleDisplayPopup("secondButton", true)
-							}
-							onMouseLeave={() =>
-								handleDisplayPopup("secondButton", false)
-							}
-						/>
-					)}
-				</div>
+				)}
 				<div
 					id="thirdButton"
 					className={`containerButton ${isPopupOpen.thirdButton ? "open" : ""}`}

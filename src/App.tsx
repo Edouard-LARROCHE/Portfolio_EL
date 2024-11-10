@@ -21,7 +21,7 @@ function App() {
 
 	const renderRoutes = () => (
 		<>
-			<Route index element={<Navigate to="/home" />} />
+			<Route index element={<Navigate to="/home/activity" replace />} />
 			<Route path="/home/activity" element={<Activity />} />
 			<Route
 				path="/home/projects"
@@ -52,9 +52,10 @@ function App() {
 					}}
 				/>
 				<Routes>
-					<Route path="/" element={<LayoutMobile />}>
+					<Route path="/home" element={<LayoutMobile />}>
 						{renderRoutes()}
 					</Route>
+					<Route path="/" element={<Navigate to="/home" replace />} />
 				</Routes>
 			</Router>
 		)

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useLocation } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 import LeftSide from "../leftSide/index"
 import RightSide from "../rightSide/index"
@@ -8,19 +8,18 @@ import ArrowAnim from "../../components/animations/arrow/arrowAnim"
 import "./scss/index.scss"
 
 const LayoutMobile = () => {
-	const location = useLocation()
+	const navigate = useNavigate()
 
 	const [showRightSide, setShowRightSide] = useState(false)
 	const [startX, setStartX] = useState(0)
 
 	useEffect(() => {
-		if (
-			location.pathname === "/home/activity" ||
-			location.pathname === "/home/projects"
-		) {
-			setShowRightSide(true)
+		if (showRightSide) {
+			navigate("/home/activity")
+		} else {
+			navigate("/home")
 		}
-	}, [location])
+	}, [showRightSide])
 
 	const toggleSide = () => {
 		setShowRightSide(!showRightSide)
