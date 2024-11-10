@@ -16,6 +16,10 @@
 
 	@include mobileScreen {
 		right: 1.5rem;
+
+		&.visible {
+			bottom: 8rem !important;
+		}
 	}
 
 	&.visible {
