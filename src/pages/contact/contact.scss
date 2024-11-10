@@ -11,6 +11,11 @@
 	justify-content: center;
 	align-items: center;
 
+	@include landScapeScreen {
+		position: relative;
+		margin: 2rem 0 4rem 0;
+	}
+
 	.containerText {
 		display: flex;
 		flex-direction: column;
