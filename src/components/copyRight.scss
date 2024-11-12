@@ -10,7 +10,9 @@
 	opacity: 0.6;
 
 	@include landScapeScreen {
-		bottom: -3rem;
+		&.customPosition {
+			bottom: -3rem;
+		}
 	}
 
 	svg {
