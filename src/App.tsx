@@ -6,7 +6,7 @@ import {
 } from "react-router-dom"
 
 import { Toaster } from "sonner"
-import { useScreenSize } from "./context/hooks/customHooks"
+import { useScreenSize } from "./context/hooks/screenSizeHooks"
 
 import Layout from "./layout/Layout"
 import Activity from "./pages/activity/activity"

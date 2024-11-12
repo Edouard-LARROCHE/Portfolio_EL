@@ -10,6 +10,11 @@
 	height: 100%;
 	background-color: $bg-black;
 	overflow-y: auto;
+	transition: 2s ease;
+
+	&.light {
+		background-color: $drak-blue;
+	}
 
 	.top {
 		display: flex;

@@ -1,4 +1,4 @@
-import { useScreenSize } from "../../context/hooks/customHooks"
+import { useScreenSize } from "../../context/hooks/screenSizeHooks"
 
 import Input from "../../components/input/input"
 import CopyRight from "../../components/copyRight"

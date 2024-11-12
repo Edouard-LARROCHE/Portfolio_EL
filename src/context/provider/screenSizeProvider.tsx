@@ -1,6 +1,6 @@
 import { useState, useEffect, ReactNode } from "react"
 
-import { ScreenSizeContext } from "./screenSizeContext"
+import { ScreenSizeContext } from "../screenSizeContext"
 
 type ScreenSizeProviderProps = {
 	children: ReactNode
