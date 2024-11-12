@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 
-import { useScreenSize } from "../../context/hooks/customHooks"
+import { useScreenSize } from "../../context/hooks/screenSizeHooks"
 
 import { ActivityProps } from "../../pages/activity/types"
 

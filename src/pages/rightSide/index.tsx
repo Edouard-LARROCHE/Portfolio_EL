@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
 
-import { useScreenSize } from "../../context/hooks/customHooks"
+import { useScreenSize } from "../../context/hooks/screenSizeHooks"
+import { useTheme } from "../../context/hooks/themeHooks"
 
 import { getGithubReposWithLanguages } from "../../services/services"
 
@@ -16,6 +17,7 @@ import type { ReposProps } from "../../types/types"
 import "./index.scss"
 
 const RightSide = () => {
+	const { theme } = useTheme()
 	const screenSize = useScreenSize()
 	const navigate = useNavigate()
 	const location = useLocation()
@@ -131,7 +133,7 @@ const RightSide = () => {
 	}
 
 	return (
-		<div className="rightPart" ref={scrollableRef}>
+		<div className={`rightPart ${theme}`} ref={scrollableRef}>
 			<div className="top">
 				<div className="buttonContainer">
 					{buttonsActions.map((button) => (

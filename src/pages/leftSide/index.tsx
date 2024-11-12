@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { useTheme } from "../../context/hooks/themeHooks"
 
 import { getGithubProfile, getGithubRepos } from "../../services/services"
 
@@ -12,6 +13,8 @@ import ConstellationSVG from "../../assets/icons/constellation.svg?react"
 import "./index.scss"
 
 const LeftSide = () => {
+	const { theme } = useTheme()
+
 	const [profile, setProfile] = useState(null)
 	const [repos, setRepos] = useState(null)
 	const [loadingData, setLoadingData] = useState(true)
@@ -30,7 +33,8 @@ const LeftSide = () => {
 	}, [])
 
 	return (
-		<div className="leftPart">
+		<div className={`leftPart ${theme}`}>
+			<div className="leftPart-overlay" />
 			<NavBar />
 			<div className="constellation">
 				<ConstellationSVG />

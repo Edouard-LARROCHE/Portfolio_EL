@@ -1,5 +1,6 @@
 @use "../../scss/config/primitives" as *;
 @use "../../scss/config/mixins" as *;
+@use "../../scss/config/functions" as *;
 
 .containerPopup {
 	cursor: default;
@@ -36,13 +37,32 @@
 		}
 	}
 
+	@include landScapeScreen {
+		&.large {
+			width: 50rem !important;
+			height: calc(100vh - 8rem) !important;
+			left: -2rem;
+			overflow-y: scroll;
+		}
+
+		&.medium {
+			width: 15rem !important;
+			height: 13rem !important;
+		}
+
+		&.small {
+			width: 30rem !important;
+			height: 15rem !important;
+		}
+	}
+
 	&.large {
 		width: 80rem;
 		height: 32rem;
 	}
 
 	&.medium {
-		width: 50rem;
+		width: 30rem;
 		height: 18rem;
 	}
 
@@ -165,6 +185,51 @@
 		.contentRight {
 			grid-column: 2;
 			grid-row: 1;
+
+			.containerDM {
+				display: flex;
+				align-items: center;
+				margin: 1.5rem 0 0 1rem;
+
+				span {
+					margin-right: 0.5rem;
+					color: $white;
+				}
+
+				.ant-switch {
+					width: 2.3rem;
+					min-width: 2.3rem;
+					height: 1.2rem;
+					background-color: $blue-sky-space;
+
+					&.ant-switch-checked {
+						background-color: $green-custom;
+					}
+
+					.ant-switch-handle {
+						width: convertToREM(15);
+						height: convertToREM(15);
+
+						&::before {
+							background-color: $white-opacity;
+						}
+					}
+				}
+			}
+
+			.containerLanguage {
+				margin: 1.5rem 0 0 1rem;
+
+				.ant-select-selector {
+					background-color: $drak-blue;
+					color: $white;
+					border: convertToREM(1) solid $blue-sky-space;
+				}
+
+				.ant-select-arrow {
+					color: $white;
+				}
+			}
 		}
 
 		.title {

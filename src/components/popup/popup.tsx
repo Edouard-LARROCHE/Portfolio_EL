@@ -1,6 +1,9 @@
+import { useState } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
+import { Switch, Select } from "antd"
 
-import { useScreenSize } from "../../context/hooks/customHooks"
+import { useScreenSize } from "../../context/hooks/screenSizeHooks"
+import { useTheme } from "../../context/hooks/themeHooks"
 
 import type { PopupProps } from "./types"
 
@@ -30,8 +33,15 @@ const Popup = ({
 	onMouseLeave,
 }: PopupProps) => {
 	const screenSize = useScreenSize()
+	const { theme, toggleTheme } = useTheme()
 	const navigate = useNavigate()
 	const location = useLocation()
+
+	const [language, setLanguage] = useState("en")
+
+	const handleLanguageChange = (value: string) => {
+		setLanguage(value)
+	}
 
 	const handleRedirect = (path: string) => {
 		if (location.pathname !== path) {
@@ -159,55 +169,84 @@ const Popup = ({
 			)}
 			{target === "discover" && (
 				<div className={`popupContainerContent ${target}`}>
-					<div className="contentLeft">
-						<div className={`title ${target}`}>Community</div>
-						<ul>
-							<li
-								className={`${target} ${location.pathname === `/home/activity` ? "active" : ""}`}
-								onClick={() => handleRedirect("/home/activity")}
-							>
-								<div className={`iconUseCase ${target}`}>
-									<Activity className="activity" />
-								</div>
-								<div className={`containerText ${target}`}>
-									<div
-										className={`textUp ${location.pathname === `/home/activity` ? "active" : ""}`}
-									>
-										Activity
+					{screenSize === "desktop" && (
+						<div className="contentLeft">
+							<div className={`title ${target}`}>Community</div>
+							<ul>
+								<li
+									className={`${target} ${location.pathname === `/home/activity` ? "active" : ""}`}
+									onClick={() =>
+										handleRedirect("/home/activity")
+									}
+								>
+									<div className={`iconUseCase ${target}`}>
+										<Activity className="activity" />
 									</div>
-								</div>
-							</li>
-							<li
-								className={`${target} ${location.pathname === `/home/projects` ? "active" : ""}`}
-								onClick={() => handleRedirect("/home/projects")}
-							>
-								<div className={`iconUseCase ${target}`}>
-									<Rocket className="rocket" />
-								</div>
-								<div className={`containerText ${target}`}>
-									<div
-										className={`textUp ${location.pathname === `/home/projects` ? "active" : ""}`}
-									>
-										Projects
+									<div className={`containerText ${target}`}>
+										<div
+											className={`textUp ${location.pathname === `/home/activity` ? "active" : ""}`}
+										>
+											Activity
+										</div>
 									</div>
-								</div>
-							</li>
-							<li
-								className={`${target} ${location.pathname === `/home/reviews` ? "active" : ""}`}
-								onClick={() => handleRedirect("/home/reviews")}
-							>
-								<div className={`iconUseCase ${target}`}>
-									<Star className="star" />
-								</div>
-								<div className={`containerText ${target}`}>
-									<div
-										className={`textUp ${location.pathname === `/home/reviews` ? "active" : ""}`}
-									>
-										Reviews
+								</li>
+								<li
+									className={`${target} ${location.pathname === `/home/projects` ? "active" : ""}`}
+									onClick={() =>
+										handleRedirect("/home/projects")
+									}
+								>
+									<div className={`iconUseCase ${target}`}>
+										<Rocket className="rocket" />
 									</div>
-								</div>
-							</li>
-						</ul>
+									<div className={`containerText ${target}`}>
+										<div
+											className={`textUp ${location.pathname === `/home/projects` ? "active" : ""}`}
+										>
+											Projects
+										</div>
+									</div>
+								</li>
+								<li
+									className={`${target} ${location.pathname === `/home/reviews` ? "active" : ""}`}
+									onClick={() =>
+										handleRedirect("/home/reviews")
+									}
+								>
+									<div className={`iconUseCase ${target}`}>
+										<Star className="star" />
+									</div>
+									<div className={`containerText ${target}`}>
+										<div
+											className={`textUp ${location.pathname === `/home/reviews` ? "active" : ""}`}
+										>
+											Reviews
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					)}
+					<div className="contentRight">
+						<div className={`title ${target}`}>Options</div>
+						<div className="containerDM">
+							<span>{theme === "light" ? "Light" : "Dark"}</span>
+							<Switch
+								checked={theme === "dark"}
+								onChange={toggleTheme}
+							/>
+						</div>
+						<div className="containerLanguage">
+							<Select
+								defaultValue={language}
+								style={{ width: 120 }}
+								onChange={handleLanguageChange}
+								options={[
+									{ value: "en", label: "English" },
+									{ value: "fr", label: "Français" },
+								]}
+							/>
+						</div>
 					</div>
 				</div>
 			)}
