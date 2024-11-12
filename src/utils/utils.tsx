@@ -55,3 +55,11 @@ export const validateEmail = (email: string) => {
 	return re.test(email)
 }
 
+export const calculateAverageRating = (reviews: any[]) => {
+	const totalRating = reviews.reduce(
+		(sum: any, review: { rating: any }) => sum + review.rating,
+		0,
+	)
+	return totalRating / reviews.length
+}
+

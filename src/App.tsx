@@ -11,6 +11,7 @@ import { useScreenSize } from "./context/hooks/customHooks"
 import Layout from "./layout/Layout"
 import Activity from "./pages/activity/activity"
 import Projects from "./pages/projects/projects"
+import ReviewData from "./data/ReviewsData"
 import Contact from "./pages/contact/contact"
 import ScreenSizeWarning from "./pages/screenSizeWarning/screenSizeWarning"
 
@@ -27,6 +28,7 @@ function App() {
 				path="/home/projects"
 				element={<Projects repos={[]} loading={false} />}
 			/>
+			<Route path="/home/reviews" element={<ReviewData />} />
 			<Route path="/home/contact" element={<Contact />} />
 		</>
 	)

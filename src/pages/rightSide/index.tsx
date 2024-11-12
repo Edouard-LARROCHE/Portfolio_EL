@@ -8,6 +8,7 @@ import { getGithubReposWithLanguages } from "../../services/services"
 import Buttons from "../../components/buttons/buttons"
 import Activity from "../activity/activity"
 import Projects from "../projects/projects"
+import ReviewData from "../../data/ReviewsData"
 import Contact from "../contact/contact"
 
 import type { ReposProps } from "../../types/types"
@@ -20,7 +21,7 @@ const RightSide = () => {
 	const location = useLocation()
 
 	const [activeComponent, setActiveComponent] = useState<
-		"activity" | "projects" | "contact" | null
+		"activity" | "projects" | "reviews" | "contact" | null
 	>(null)
 	const [repos, setRepos] = useState<ReposProps>([])
 	const [loading, setLoading] = useState(true)
@@ -44,6 +45,13 @@ const RightSide = () => {
 		},
 		{
 			id: 3,
+			color: "",
+			text: "Reviews",
+			component: "reviews" as const,
+			path: "/home/reviews",
+		},
+		{
+			id: 4,
 			color: "",
 			text: "Contact",
 			component: "contact" as const,
@@ -78,6 +86,10 @@ const RightSide = () => {
 			}
 		}
 
+		if (location.pathname === "/home/reviews") {
+			setActiveComponent("reviews")
+		}
+
 		if (location.pathname === "/home/contact") {
 			setActiveComponent("contact")
 		}
@@ -90,7 +102,7 @@ const RightSide = () => {
 	}
 
 	const handleButtonClick = (
-		component: "activity" | "projects" | "contact",
+		component: "activity" | "projects" | "reviews" | "contact",
 		path: string,
 	) => {
 		setActiveComponent(component)
@@ -109,6 +121,8 @@ const RightSide = () => {
 						scrollableRef={scrollableRef}
 					/>
 				)
+			case "reviews":
+				return <ReviewData />
 			case "contact":
 				return <Contact />
 			default:

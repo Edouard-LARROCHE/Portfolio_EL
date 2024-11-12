@@ -1,5 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom"
 
+import { useScreenSize } from "../../context/hooks/customHooks"
+
 import type { PopupProps } from "./types"
 
 import Techno from "../../assets/icons/techno.svg?react"
@@ -9,6 +11,7 @@ import Archi from "../../assets/icons/archiWeb.svg?react"
 import Activity from "../../assets/icons/activity.svg?react"
 import Rocket from "../../assets/icons/rocket.svg?react"
 import Heart from "../../assets/icons/heart.svg?react"
+import Star from "../../assets/icons/star.svg?react"
 
 import Discord from "../../assets/icons/contact/discord.svg?react"
 import Github from "../../assets/icons/contact/github.svg?react"
@@ -26,6 +29,7 @@ const Popup = ({
 	onMouseEnter,
 	onMouseLeave,
 }: PopupProps) => {
+	const screenSize = useScreenSize()
 	const navigate = useNavigate()
 	const location = useLocation()
 
@@ -188,6 +192,21 @@ const Popup = ({
 									</div>
 								</div>
 							</li>
+							<li
+								className={`${target} ${location.pathname === `/home/reviews` ? "active" : ""}`}
+								onClick={() => handleRedirect("/home/reviews")}
+							>
+								<div className={`iconUseCase ${target}`}>
+									<Star className="star" />
+								</div>
+								<div className={`containerText ${target}`}>
+									<div
+										className={`textUp ${location.pathname === `/home/reviews` ? "active" : ""}`}
+									>
+										Reviews
+									</div>
+								</div>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -248,13 +267,17 @@ const Popup = ({
 							</li>
 						</ul>
 						<div className="containerAction">
-							<div
-								className="goToContact"
-								onClick={() => handleRedirect("/home/contact")}
-							>
-								Send me a message
-								<Arrow2 className="arrow2" />
-							</div>
+							{screenSize === "desktop" && (
+								<div
+									className="goToContact"
+									onClick={() =>
+										handleRedirect("/home/contact")
+									}
+								>
+									Send me a message
+									<Arrow2 className="arrow2" />
+								</div>
+							)}
 							<div
 								className="followMe"
 								onClick={() => handleClickFollowMe()}
