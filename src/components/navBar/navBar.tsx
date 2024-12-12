@@ -1,4 +1,5 @@
 import { useState, useRef } from "react"
+import { useTranslation } from "react-i18next"
 import { useScreenSize } from "../../context/hooks/screenSizeHooks"
 
 import type { Button } from "./types"
@@ -11,6 +12,7 @@ import "./navBar.scss"
 
 const NavBar = () => {
 	const screenSize = useScreenSize()
+	const { t } = useTranslation()
 
 	const [isPopupOpen, setIsPopupOpen] = useState<Record<Button, boolean>>({
 		firstButton: false,
@@ -61,7 +63,7 @@ const NavBar = () => {
 						handleDisplayPopup("firstButton", false)
 					}
 				>
-					<div className="text">Why me?</div>
+					<div className="text">{t("whyme")}</div>
 					<div
 						className={`icon ${isPopupOpen.firstButton ? "open" : ""}`}
 					>
