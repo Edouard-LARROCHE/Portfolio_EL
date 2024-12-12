@@ -1,5 +1,5 @@
-import { useState } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 import { Switch, Select } from "antd"
 
 import { useScreenSize } from "../../context/hooks/screenSizeHooks"
@@ -36,11 +36,14 @@ const Popup = ({
 	const { theme, toggleTheme } = useTheme()
 	const navigate = useNavigate()
 	const location = useLocation()
+	const { i18n } = useTranslation()
 
-	const [language, setLanguage] = useState("en")
+	const changeLanguage = (lng: string) => {
+		i18n.changeLanguage(lng)
+	}
 
 	const handleLanguageChange = (value: string) => {
-		setLanguage(value)
+		changeLanguage(value)
 	}
 
 	const handleRedirect = (path: string) => {
@@ -52,6 +55,8 @@ const Popup = ({
 	const handleClickFollowMe = () => {
 		window.open(`${import.meta.env.VITE_API_REDIRECT_GITHUB}`, "_blank")
 	}
+
+	console.log(i18n.language, "i18n.language")
 
 	return (
 		<div
@@ -238,7 +243,7 @@ const Popup = ({
 						</div>
 						<div className="containerLanguage">
 							<Select
-								defaultValue={language}
+								defaultValue={i18n.language}
 								style={{ width: 120 }}
 								onChange={handleLanguageChange}
 								options={[
