@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react"
+import { useTranslation } from "react-i18next"
 
 import { toast } from "sonner"
 import { validateEmail } from "../../utils/utils"
@@ -8,7 +9,10 @@ import emailjs from "emailjs-com"
 import "./input.scss"
 
 const Input = () => {
+	const { t } = useTranslation()
+
 	const form = useRef<HTMLFormElement>(null)
+
 	const [email, setEmail] = useState("")
 	const [message, setMessage] = useState("")
 	const [isEmailValid, setIsEmailValid] = useState(true)
@@ -34,9 +38,9 @@ const Input = () => {
 						import.meta.env.VITE_API_EMAILJS_USERID,
 					),
 					{
-						loading: "Sending...",
-						success: "Email sent!",
-						error: "Something went wrong...",
+						loading: t("rightSide.contact.email.loading"),
+						success: t("rightSide.contact.email.success"),
+						error: t("rightSide.contact.email.error"),
 					},
 				)
 				setEmail("")
@@ -51,7 +55,7 @@ const Input = () => {
 		setIsEmailValid(validateEmail(emailValue))
 
 		if (!validateEmail(emailValue)) {
-			setError("Please enter a valid email address")
+			setError(t("rightSide.contact.email.warning"))
 		} else {
 			setError("")
 		}
@@ -78,7 +82,7 @@ const Input = () => {
 					autoFocus
 					className={`input ${!isEmailValid ? "invalid" : ""}`}
 					type="text"
-					placeholder="Your email address"
+					placeholder={t("rightSide.contact.input.email.placeholder")}
 				/>
 				<div className="errorMessage">{error}</div>
 				<div className="inputDivider">
@@ -87,19 +91,23 @@ const Input = () => {
 						onChange={(e) => setMessage(e.target.value)}
 						value={message}
 						className="textarea"
-						placeholder="Your message"
+						placeholder={t(
+							"rightSide.contact.input.message.placeholder",
+						)}
 					/>
 					<button
 						className="button"
 						onClick={handleSubmit}
 						disabled={disabled}
 					>
-						Send
+						{t("rightSide.contact.buttonText")}
 					</button>
 					<div className="myEmailClient">
 						<span onClick={() => handleEmailClick()}>
-							Or send it with{" "}
-							<span className="highlight">my email client</span>
+							{t("rightSide.contact.myEmailClient.text")}{" "}
+							<span className="highlight">
+								{t("rightSide.contact.myEmailClient.highlight")}
+							</span>
 						</span>
 					</div>
 				</div>

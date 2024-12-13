@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useTranslation } from "react-i18next"
 
 import { ActivityProps } from "./types"
 
@@ -20,6 +21,8 @@ import TriangleDown from "../../assets/icons/activity/triangle-down.svg?react"
 import "./activity.scss"
 
 const Activity: React.FC<ActivityProps> = ({ scrollableRef }) => {
+	const { t, i18n } = useTranslation()
+
 	const [activity, setActivity] = useState<any>([])
 	const [loading, setLoading] = useState(true)
 	const [commitsByProject, setCommitsByProject] = useState<any>({})
@@ -162,6 +165,9 @@ const Activity: React.FC<ActivityProps> = ({ scrollableRef }) => {
 												{TimeActivity(
 													commit.commit.committer
 														.date,
+													false,
+													t,
+													i18n,
 												)}
 											</div>
 										</div>
@@ -174,6 +180,8 @@ const Activity: React.FC<ActivityProps> = ({ scrollableRef }) => {
 											{TimeActivity(
 												commit.commit.committer.date,
 												true,
+												t,
+												i18n,
 											)}
 										</div>
 									)}

@@ -63,7 +63,7 @@ const NavBar = () => {
 						handleDisplayPopup("firstButton", false)
 					}
 				>
-					<div className="text">{t("whyme")}</div>
+					<div className="text">{t("navBar.whyme")}</div>
 					<div
 						className={`icon ${isPopupOpen.firstButton ? "open" : ""}`}
 					>
@@ -94,7 +94,7 @@ const NavBar = () => {
 						handleDisplayPopup("secondButton", false)
 					}
 				>
-					<div className="text">Discover</div>
+					<div className="text">{t("navBar.discover")}</div>
 					<div
 						className={`icon ${isPopupOpen.secondButton ? "open" : ""}`}
 					>
@@ -123,7 +123,7 @@ const NavBar = () => {
 						handleDisplayPopup("thirdButton", false)
 					}
 				>
-					<div className="text">Shared with me</div>
+					<div className="text">{t("navBar.shared")}</div>
 					<div
 						className={`icon ${isPopupOpen.thirdButton ? "open" : ""}`}
 					>

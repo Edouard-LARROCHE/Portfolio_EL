@@ -3,6 +3,134 @@
 		"title": "Passionné",
 		"subtitle": "Développeur Full-Stack",
 		"desc": "Avec plusieurs années d'expérience en développement web et un talent pour transformer le café en code, je suis toujours prêt à relever de nouveaux défis et à créer des expériences numériques incroyables."
+	},
+	"workingData": {
+		"totalReposTitle": "Totalisations des dépôts",
+		"repositories": "Dépôts",
+		"totalContributedTitle": "Contribué{{s}}",
+		"followingTitle": "Abonnements",
+		"followersTitle": "Abonnés"
+	},
+	"copyRight": {
+		"createBy": "Créé par"
+	},
+	"navBar": {
+		"whyme": "Pourquoi moi?",
+		"discover": "Découvrir",
+		"shared": "Partager avec moi"
+	},
+	"fisrtPopup": {
+		"useCase": {
+			"useCases": "Cas d'utilisation",
+			"techEnthusiast": {
+				"title": "Passionné de technologie",
+				"desc": "Expert en développement moderne et solutions innovantes"
+			},
+			"securityFirst": {
+				"title": "Sécurité avant tout",
+				"desc": "Protection des systèmes et des données sensibles avec précision"
+			},
+			"committedLeader": {
+				"title": "Leader engagé",
+				"desc": "Diriger les équipes pour atteindre l'excellence collective"
+			},
+			"webArchitect": {
+				"title": "Architecte Web",
+				"desc": "Concevoir des architectures web robustes et évolutives"
+			}
+		},
+		"userStory": {
+			"title": "Récit utilisateur",
+			"text": {
+				"p1": "En tant que développeur Front-End passionné avec quatre ans d'expérience, j'ai perfectionné mes compétences principalement sur ReactJS. Mon parcours a commencé avec des projets personnels qui m'ont permis d'explorer différents aspects du développement front-end, du design UI/UX à l'implémentation de fonctionnalités complexes.",
+				"p2": "Au fil des années, j'ai travaillé sur de nombreux projets pour des clients, livrant des applications web de haute qualité, réactives et conviviales.",
+				"p3": "Depuis deux ans, je suis développeur Front-End chez LockSelf, une entreprise de cybersécurité où j'ai joué un rôle clé dans le développement et la maintenance d'applications web sécurisées et évolutives. Mon rôle implique une collaboration étroite avec les développeurs back-end, les designers et les chefs de produit pour garantir une intégration fluide et une expérience utilisateur optimale. Mon travail chez LockSelf a approfondi mon expertise en technologies front-end, notamment ReactJS, tout en élargissant ma compréhension des pratiques de cybersécurité. Mon parcours en tant que développeur a été motivé par un apprentissage continu et un fort engagement envers l'excellence.",
+				"p4": "Je suis fier de livrer un code bien structuré, propre, et de rester à jour avec les dernières tendances du secteur. Je suis toujours prêt à relever de nouveaux défis et à contribuer à des projets significatifs qui font la différence."
+			}
+		}
+	},
+	"secondPopup": {
+		"community": {
+			"title": "Communauté",
+			"options": {
+				"activity": "Activité",
+				"projects": "Projets",
+				"reviews": "Avis"
+			}
+		},
+		"options": {
+			"title": "Options",
+			"dm": {
+				"light": "Clair",
+				"dark": "Sombre"
+			},
+			"language": {
+				"en": "Anglais",
+				"fr": "Français"
+			}
+		}
+	},
+	"thirdPopup": {
+		"title": "Contact",
+		"sendMessage": "Envoyez-moi un message",
+		"followMe": "Suivez-moi sur"
+	},
+	"rightSide": {
+		"button": {
+			"activity": "Activité",
+			"projects": "Projets",
+			"reviews": "Avis",
+			"contact": "Contact"
+		},
+		"activity": {
+			"aboutTime": {
+				"timeAgoSuffix": "il y a {{time}}"
+			}
+		},
+		"review": {
+			"websiteLink": "Lien du site",
+			"by": "Par",
+			"button": {
+				"readMore": "Lire plus",
+				"showLess": "Voir moins"
+			},
+			"review1": "Travailler avec Édouard a été une expérience fantastique ! Il a créé un site web magnifique pour notre appartement de location à Marseille, mettant en valeur l'espace avec des photos de haute qualité et des informations détaillées. Le site est visuellement attrayant, facile à naviguer, et parfaitement conçu pour attirer des invités potentiels. Le professionnalisme et l'attention aux détails d'Édouard ont rendu tout le processus fluide et agréable. Je le recommande vivement à toute personne souhaitant créer une présence en ligne remarquable !",
+			"review2": "Un immense merci à Édouard pour la création de notre superbe site vitrine ! Grâce à lui, notre boutique bénéficie désormais d'une présence en ligne élégante et professionnelle. Le site reflète parfaitement l'identité de notre marque avec des visuels magnifiques et une navigation intuitive, offrant à nos clients un aperçu immersif de nos produits et services. Édouard a été à l'écoute de nos besoins, proposant des solutions créatives et efficaces à chaque étape. Son expertise a fait toute la différence. Je le recommande vivement à toute entreprise souhaitant se démarquer en ligne !",
+			"review3": "Très belle participation à notre projet SASS, humainement et techniquement au top ! 🙂"
+		},
+		"contact": {
+			"title": "N'hésitez pas à me contacter !",
+			"desc": {
+				"p1": "Que vous ayez un",
+				"p2": "projet",
+				"p3": "en tête, besoin d'aide avec votre application existante, ou que vous souhaitiez",
+				"p4": "simplement",
+				"p5": "échanger, je suis là pour vous aider.",
+				"p6": "Veuillez décrire vos besoins ou vos",
+				"p7": "idées",
+				"p8": ", et je vous répondrai dès que",
+				"p9": "possible"
+			},
+			"email": {
+				"loading": "Envoi de l'email...",
+				"success": "Email envoyé !",
+				"error": "Une erreur est survenue...",
+				"warning": "Merci de renseigner un email valide"
+			},
+			"input": {
+				"email": {
+					"placeholder": "Votre adresse email"
+				},
+				"message": {
+					"placeholder": "Votre message"
+				}
+			},
+			"buttonText": "Envoyer",
+			"myEmailClient": {
+				"text": "Ou envoyez-le avec",
+				"highlight": "mon client email"
+			}
+		}
 	}
 }
 

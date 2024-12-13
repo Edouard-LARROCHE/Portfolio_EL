@@ -36,7 +36,7 @@ const Popup = ({
 	const { theme, toggleTheme } = useTheme()
 	const navigate = useNavigate()
 	const location = useLocation()
-	const { i18n } = useTranslation()
+	const { i18n, t } = useTranslation()
 
 	const changeLanguage = (lng: string) => {
 		i18n.changeLanguage(lng)
@@ -56,8 +56,6 @@ const Popup = ({
 		window.open(`${import.meta.env.VITE_API_REDIRECT_GITHUB}`, "_blank")
 	}
 
-	console.log(i18n.language, "i18n.language")
-
 	return (
 		<div
 			className={`containerPopup ${size}`}
@@ -68,7 +66,9 @@ const Popup = ({
 			{target === "withMe" && (
 				<div className="popupContainerContent">
 					<div className="contentLeft">
-						<div className="title">Use cases</div>
+						<div className="title">
+							{t("fisrtPopup.useCase.useCases")}
+						</div>
 						<ul>
 							<li>
 								<div className="iconUseCase">
@@ -76,11 +76,14 @@ const Popup = ({
 								</div>
 								<div className="containerText">
 									<div className="textUp">
-										Tech Enthusiast
+										{t(
+											"fisrtPopup.useCase.techEnthusiast.title",
+										)}
 									</div>
 									<div className="textDown">
-										Expert in modern development and
-										innovative solutions.
+										{t(
+											"fisrtPopup.useCase.techEnthusiast.desc",
+										)}
 									</div>
 								</div>
 							</li>
@@ -89,10 +92,15 @@ const Popup = ({
 									<Cyber />
 								</div>
 								<div className="containerText">
-									<div className="textUp">Security First</div>
+									<div className="textUp">
+										{t(
+											"fisrtPopup.useCase.securityFirst.title",
+										)}
+									</div>
 									<div className="textDown">
-										Protecting systems and sensitive data
-										with precision.
+										{t(
+											"fisrtPopup.useCase.securityFirst.desc",
+										)}
 									</div>
 								</div>
 							</li>
@@ -102,11 +110,14 @@ const Popup = ({
 								</div>
 								<div className="containerText">
 									<div className="textUp">
-										Committed Leader
+										{t(
+											"fisrtPopup.useCase.committedLeader.title",
+										)}
 									</div>
 									<div className="textDown">
-										Guiding teams to achieve collective
-										excellence.
+										{t(
+											"fisrtPopup.useCase.committedLeader.desc",
+										)}
 									</div>
 								</div>
 							</li>
@@ -115,59 +126,32 @@ const Popup = ({
 									<Archi />
 								</div>
 								<div className="containerText">
-									<div className="textUp">Web Architect</div>
+									<div className="textUp">
+										{t(
+											"fisrtPopup.useCase.webArchitect.title",
+										)}
+									</div>
 									<div className="textDown">
-										Designing robust and scalable web
-										architectures.
+										{t(
+											"fisrtPopup.useCase.webArchitect.desc",
+										)}
 									</div>
 								</div>
 							</li>
 						</ul>
 					</div>
 					<div className="contentRight">
-						<div className="title">User storie</div>
+						<div className="title">
+							{t("fisrtPopup.userStory.title")}
+						</div>
 						<div className="text">
-							<p>
-								As a passionate Front-End Developer with four
-								years of experience, I have honed my skills
-								primarily in ReactJS. My journey began with
-								personal projects that allowed me to explore
-								different aspects of front-end development, from
-								UI/UX design to implementing complex
-								functionalities.
-							</p>
+							<p>{t("fisrtPopup.userStory.text.p1")}</p>
 							<br />
-							<p>
-								Over the years, I have worked on numerous
-								projects for clients, delivering high-quality,
-								responsive, and user-friendly web applications.
-							</p>
+							<p>{t("fisrtPopup.userStory.text.p2")}</p>
 							<br />
-							<p>
-								For the past two years, I have been employed as
-								a Front-End Developer at LockSelf, a
-								cybersecurity company where I have been
-								instrumental in developing and maintaining
-								secure and scalable web applications. My role
-								involves collaborating closely with back-end
-								developers, designers, and product managers to
-								ensure seamless integration and optimal user
-								experience. My work at LockSelf has deepened my
-								expertise in front-end technologies,
-								particularly ReactJS, while also broadening my
-								understanding of cybersecurity practices. My
-								journey as a developer has been driven by
-								continuous learning and a strong commitment to
-								excellence.
-							</p>
+							<p>{t("fisrtPopup.userStory.text.p3")}</p>
 							<br />
-							<p>
-								I take pride in delivering well-structured,
-								clean code and staying up-to-date with the
-								latest industry trends. I am always eager to
-								take on new challenges and contribute to
-								meaningful projects that make a difference.
-							</p>
+							<p>{t("fisrtPopup.userStory.text.p4")}</p>
 						</div>
 					</div>
 				</div>
@@ -176,7 +160,9 @@ const Popup = ({
 				<div className={`popupContainerContent ${target}`}>
 					{screenSize === "desktop" && (
 						<div className="contentLeft">
-							<div className={`title ${target}`}>Community</div>
+							<div className={`title ${target}`}>
+								{t("secondPopup.community.title")}
+							</div>
 							<ul>
 								<li
 									className={`${target} ${location.pathname === `/home/activity` ? "active" : ""}`}
@@ -191,7 +177,9 @@ const Popup = ({
 										<div
 											className={`textUp ${location.pathname === `/home/activity` ? "active" : ""}`}
 										>
-											Activity
+											{t(
+												"secondPopup.community.options.activity",
+											)}
 										</div>
 									</div>
 								</li>
@@ -208,7 +196,9 @@ const Popup = ({
 										<div
 											className={`textUp ${location.pathname === `/home/projects` ? "active" : ""}`}
 										>
-											Projects
+											{t(
+												"secondPopup.community.options.projects",
+											)}
 										</div>
 									</div>
 								</li>
@@ -225,7 +215,9 @@ const Popup = ({
 										<div
 											className={`textUp ${location.pathname === `/home/reviews` ? "active" : ""}`}
 										>
-											Reviews
+											{t(
+												"secondPopup.community.options.reviews",
+											)}
 										</div>
 									</div>
 								</li>
@@ -233,9 +225,15 @@ const Popup = ({
 						</div>
 					)}
 					<div className="contentRight">
-						<div className={`title ${target}`}>Options</div>
+						<div className={`title ${target}`}>
+							{t("secondPopup.options.title")}
+						</div>
 						<div className="containerDM">
-							<span>{theme === "light" ? "Light" : "Dark"}</span>
+							<span>
+								{theme === "light"
+									? t("secondPopup.options.dm.light")
+									: t("secondPopup.options.dm.dark")}
+							</span>
 							<Switch
 								checked={theme === "dark"}
 								onChange={toggleTheme}
@@ -247,8 +245,18 @@ const Popup = ({
 								style={{ width: 120 }}
 								onChange={handleLanguageChange}
 								options={[
-									{ value: "en", label: "English" },
-									{ value: "fr", label: "Français" },
+									{
+										value: "en",
+										label: t(
+											"secondPopup.options.language.en",
+										),
+									},
+									{
+										value: "fr",
+										label: t(
+											"secondPopup.options.language.fr",
+										),
+									},
 								]}
 							/>
 						</div>
@@ -258,7 +266,9 @@ const Popup = ({
 			{target === "shared" && (
 				<div className={`popupContainerContent ${target}`}>
 					<div className="contentLeft">
-						<div className={`title ${target}`}>Contact</div>
+						<div className={`title ${target}`}>
+							{t("thirdPopup.title")}
+						</div>
 						<ul className={`${target}`}>
 							<li>
 								<div className="containerIcon">
@@ -318,7 +328,7 @@ const Popup = ({
 										handleRedirect("/home/contact")
 									}
 								>
-									Send me a message
+									{t("thirdPopup.sendMessage")}
 									<Arrow2 className="arrow2" />
 								</div>
 							)}
@@ -326,7 +336,8 @@ const Popup = ({
 								className="followMe"
 								onClick={() => handleClickFollowMe()}
 							>
-								Follow me on <Heart className="heart" />
+								{t("thirdPopup.followMe")}{" "}
+								<Heart className="heart" />
 							</div>
 						</div>
 					</div>
