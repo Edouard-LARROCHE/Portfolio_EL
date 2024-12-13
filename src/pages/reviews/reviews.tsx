@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useTranslation } from "react-i18next"
 
 import { Card, Rate, Button } from "antd"
 import { ReviewProps } from "./types"
@@ -8,6 +9,8 @@ import Link from "../../assets/icons/link.svg?react"
 import "./reviews.scss"
 
 const ReviewCard = ({ review }: { review: ReviewProps }) => {
+	const { t } = useTranslation()
+
 	const [expanded, setExpanded] = useState(false)
 
 	const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -19,8 +22,10 @@ const ReviewCard = ({ review }: { review: ReviewProps }) => {
 		<div className="reviewCard">
 			<Card className="cardReview">
 				<div className="reviewTop">
-					<img className="img" alt="img" src={review.picture} />
-					<Rate disabled defaultValue={review.rating} />
+					{review.picture && (
+						<img className="img" alt="img" src={review.picture} />
+					)}
+					<Rate disabled allowHalf defaultValue={review.rating} />
 				</div>
 				<Card.Meta
 					description={
@@ -36,13 +41,19 @@ const ReviewCard = ({ review }: { review: ReviewProps }) => {
 							>
 								{review.text.length > 150 && (
 									<p className="reviewButtonText">
-										{expanded ? "Show Less" : "Read More"}
+										{expanded
+											? t(
+													"rightSide.review.button.showLess",
+												)
+											: t(
+													"rightSide.review.button.readMore",
+												)}
 									</p>
 								)}
 							</Button>
 							{review.website && (
 								<p className="reviewWebsiteLink">
-									Website link
+									{t("rightSide.review.websiteLink")}
 									<a
 										href={review.website}
 										target="_blank"
@@ -54,7 +65,7 @@ const ReviewCard = ({ review }: { review: ReviewProps }) => {
 								</p>
 							)}
 							<p className="reviewTextName">
-								By {review.clientName}
+								{t("rightSide.review.by")} {review.clientName}
 							</p>
 						</div>
 					}

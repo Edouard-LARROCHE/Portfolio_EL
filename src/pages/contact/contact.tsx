@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next"
+
 import { useScreenSize } from "../../context/hooks/screenSizeHooks"
 
 import Input from "../../components/input/input"
@@ -6,24 +8,34 @@ import CopyRight from "../../components/copyRight"
 import "./contact.scss"
 
 const Contact = () => {
+	const { t } = useTranslation()
 	const screenSize = useScreenSize()
 
 	return (
 		<div className="containerContact">
 			<div className="containerText">
-				<div className="textFirst">Feel free to reach out!</div>
+				<div className="textFirst">{t("rightSide.contact.title")}</div>
 				<div className="textSecond">
-					Whether you have a{" "}
-					<span className="highlight">project</span> in mind, need
-					assistance with your existing application, or{" "}
-					<span className="highlight">symply</span> want to connect,
-					I'm here to help.
+					{t("rightSide.contact.desc.p1")}{" "}
+					<span className="highlight">
+						{t("rightSide.contact.desc.p2")}
+					</span>{" "}
+					{t("rightSide.contact.desc.p3")}{" "}
+					<span className="highlight">
+						{t("rightSide.contact.desc.p4")}
+					</span>{" "}
+					{t("rightSide.contact.desc.p5")}
 				</div>
 				<div className="textSecond">
-					Please describe your needs or{" "}
-					<span className="highlight">ideas</span>, and I’ll get back
-					to you as soon as{" "}
-					<span className="highlight">possible</span>.
+					{t("rightSide.contact.desc.p6")}{" "}
+					<span className="highlight">
+						{t("rightSide.contact.desc.p7")}
+					</span>
+					{t("rightSide.contact.desc.p8")}{" "}
+					<span className="highlight">
+						{t("rightSide.contact.desc.p9")}
+					</span>
+					.
 				</div>
 			</div>
 			<Input />

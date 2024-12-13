@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 import { useScreenSize } from "../../context/hooks/screenSizeHooks"
 import { useTheme } from "../../context/hooks/themeHooks"
@@ -17,6 +18,7 @@ import type { ReposProps } from "../../types/types"
 import "./index.scss"
 
 const RightSide = () => {
+	const { t } = useTranslation()
 	const { theme } = useTheme()
 	const screenSize = useScreenSize()
 	const navigate = useNavigate()
@@ -34,28 +36,28 @@ const RightSide = () => {
 		{
 			id: 1,
 			color: "",
-			text: "Activity",
+			text: t("rightSide.button.activity"),
 			component: "activity" as const,
 			path: "/home/activity",
 		},
 		{
 			id: 2,
 			color: "",
-			text: "Projects",
+			text: t("rightSide.button.projects"),
 			component: "projects" as const,
 			path: "/home/projects",
 		},
 		{
 			id: 3,
 			color: "",
-			text: "Reviews",
+			text: t("rightSide.button.reviews"),
 			component: "reviews" as const,
 			path: "/home/reviews",
 		},
 		{
 			id: 4,
 			color: "",
-			text: "Contact",
+			text: t("rightSide.button.contact"),
 			component: "contact" as const,
 			path: "/home/contact",
 		},

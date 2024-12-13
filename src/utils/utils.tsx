@@ -1,4 +1,4 @@
-import { formatDistanceToNow } from "date-fns"
+import { formatDistanceStrict, formatDistanceToNow } from "date-fns"
 
 type Languages = {
 	[key: string]: number
@@ -34,10 +34,40 @@ export const transformAndSortLanguages = (languages: Languages): Languages => {
 		}, {} as Languages)
 }
 
-export const TimeActivity = (commit: string, formattedDate?: boolean) => {
+export const TimeActivity = (
+	commit: string,
+	formattedDate?: boolean,
+	t?: any,
+	i18n?: any,
+) => {
 	const commitDate = new Date(commit)
-	const timeAgo = formatDistanceToNow(commitDate, { addSuffix: true })
-	const formatDate = commitDate.toLocaleDateString("en-GB", {
+
+	const timeAgoEN = formatDistanceToNow(commitDate, { addSuffix: false })
+	const timeAgoFR = formatDistanceStrict(commitDate, new Date(), {
+		addSuffix: false,
+	})
+	const translatedTimeAgoFR = timeAgoFR
+		.replace(/years?/, "ans")
+		.replace(/months?/, "mois")
+		.replace(/days?/, "jours")
+		.replace(/hours?/, "heures")
+		.replace(/minutes?/, "minutes")
+
+	const translatedTimeAgoEN = t(
+		"rightSide.activity.aboutTime.timeAgoSuffix",
+		{
+			time: timeAgoEN,
+		},
+	)
+	const finalTranslatedTimeAgoFR = t(
+		"rightSide.activity.aboutTime.timeAgoSuffix",
+		{
+			time: translatedTimeAgoFR,
+		},
+		{ lng: "fr" },
+	)
+
+	const formatDate = commitDate.toLocaleDateString(i18n.language, {
 		day: "2-digit",
 		month: "short",
 		year: "numeric",
@@ -46,7 +76,13 @@ export const TimeActivity = (commit: string, formattedDate?: boolean) => {
 	if (formattedDate) {
 		return <div className="timeActivity">{formatDate}</div>
 	} else {
-		return <div className="timeActivity">{timeAgo}</div>
+		return (
+			<div className="timeActivity">
+				{i18n.language === "en"
+					? translatedTimeAgoEN
+					: finalTranslatedTimeAgoFR}
+			</div>
+		)
 	}
 }
 
