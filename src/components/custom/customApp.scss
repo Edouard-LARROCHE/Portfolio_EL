@@ -1,0 +1,60 @@
+@use "../../scss/config/functions" as *;
+@use "../../scss//config/primitives" as *;
+
+.customPopup {
+	.containerActions {
+		padding: 1rem;
+		backdrop-filter: blur(convertToREM(4));
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		padding: 1rem;
+
+		.contentLeft {
+			display: flex;
+			gap: 2rem;
+			margin-right: 2rem;
+
+			.leftPicker,
+			.rightPicker {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+			}
+		}
+
+		.contentRight {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+
+			.title {
+				font-size: convertToREM(14);
+				color: $brand-grey;
+				font-weight: 600;
+			}
+
+			select {
+				padding: 0.5rem;
+				font-size: convertToREM(14);
+				border: convertToREM(1) solid $brand-grey;
+				border-radius: convertToREM(4);
+				background-color: $brand-white;
+				color: $black-smouth;
+				appearance: none;
+				background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+				background-repeat: no-repeat;
+				background-position: right 0.75rem center;
+				background-size: 1rem;
+				cursor: pointer;
+
+				&:focus {
+					outline: none;
+					border-color: $smoth-white;
+					box-shadow: 0 0 0 convertToREM(3) rgba($smoth-white, 0.25);
+				}
+			}
+		}
+	}
+}
+

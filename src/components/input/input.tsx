@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react"
+import { useAppSelector } from "../../types/store.types"
 import { useTranslation } from "react-i18next"
 
 import { toast } from "sonner"
@@ -10,6 +11,8 @@ import "./input.scss"
 
 const Input = () => {
 	const { t } = useTranslation()
+
+	const customColor = useAppSelector((state) => state.custom.buttonColor)
 
 	const form = useRef<HTMLFormElement>(null)
 
@@ -99,6 +102,9 @@ const Input = () => {
 						className="button"
 						onClick={handleSubmit}
 						disabled={disabled}
+						style={{
+							backgroundColor: customColor,
+						}}
 					>
 						{t("rightSide.contact.buttonText")}
 					</button>

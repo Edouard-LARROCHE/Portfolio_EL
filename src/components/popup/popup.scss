@@ -186,7 +186,8 @@
 			grid-column: 2;
 			grid-row: 1;
 
-			.containerDM {
+			.containerDM,
+			.containerCustom {
 				display: flex;
 				align-items: center;
 				margin: 1.5rem 0 0 1rem;
@@ -200,11 +201,6 @@
 					width: 2.3rem;
 					min-width: 2.3rem;
 					height: 1.2rem;
-					background-color: $blue-sky-space;
-
-					&.ant-switch-checked {
-						background-color: $green-custom;
-					}
 
 					.ant-switch-handle {
 						width: convertToREM(15);

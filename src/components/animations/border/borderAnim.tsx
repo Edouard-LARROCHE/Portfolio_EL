@@ -1,9 +1,12 @@
 import { useEffect, useRef } from "react"
+import { useAppSelector } from "../../../types/store.types"
 
 import "./borderAnim.scss"
 
 const BorderAnim = () => {
 	const animRef = useRef<HTMLDivElement>(null)
+
+	const snakeColor = useAppSelector((state) => state.custom.snakeColor)
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -27,10 +30,22 @@ const BorderAnim = () => {
 
 	return (
 		<div ref={animRef}>
-			<div className="span animated"></div>
-			<div className="span animated"></div>
-			<div className="span animated"></div>
-			<div className="span animated"></div>
+			<div
+				className="span animated"
+				style={{ backgroundColor: snakeColor }}
+			/>
+			<div
+				className="span animated"
+				style={{ backgroundColor: snakeColor }}
+			/>
+			<div
+				className="span animated"
+				style={{ backgroundColor: snakeColor }}
+			/>
+			<div
+				className="span animated"
+				style={{ backgroundColor: snakeColor }}
+			/>
 		</div>
 	)
 }

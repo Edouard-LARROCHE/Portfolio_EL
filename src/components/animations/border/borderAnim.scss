@@ -4,7 +4,7 @@
 .span.animated {
 	z-index: 1;
 	position: absolute;
-	background: linear-gradient(to right, #0c002b, #1779ff);
+	background: linear-gradient(to right, #0c002b);
 	opacity: 0;
 
 	&:nth-child(1) {
@@ -22,7 +22,7 @@
 		right: 0;
 		width: convertToREM(1);
 		height: 100%;
-		background: linear-gradient(to bottom, #0c002b, #1779ff);
+		background: linear-gradient(to bottom, #0c002b);
 		animation: snake-2 24s linear infinite;
 		animation-delay: 3s;
 		animation-fill-mode: forwards;
@@ -33,7 +33,7 @@
 		left: 0;
 		width: 100%;
 		height: convertToREM(1);
-		background: linear-gradient(to left, #0c002b, #1779ff);
+		background: linear-gradient(to left, #0c002b);
 		animation: snake-3 24s linear infinite;
 		animation-delay: 6s;
 		animation-fill-mode: forwards;
@@ -44,7 +44,7 @@
 		left: 0;
 		width: convertToREM(1);
 		height: 100%;
-		background: linear-gradient(to top, #0c002b, #1779ff);
+		background: linear-gradient(to top, #0c002b);
 		animation: snake-4 24s linear infinite;
 		animation-delay: 9s;
 		animation-fill-mode: forwards;

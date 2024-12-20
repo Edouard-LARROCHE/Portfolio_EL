@@ -53,11 +53,6 @@
 		align-items: center;
 	}
 
-	.scrollTop:hover {
-		color: $green-custom;
-		border-color: $green-custom;
-	}
-
 	.scrollTop:hover:before {
 		transform: rotate(360deg);
 	}

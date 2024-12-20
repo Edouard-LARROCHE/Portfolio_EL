@@ -5,6 +5,8 @@ import {
 	Navigate,
 } from "react-router-dom"
 
+import { useAppSelector } from "./types/store.types"
+
 import { Toaster } from "sonner"
 import { useScreenSize } from "./context/hooks/screenSizeHooks"
 
@@ -14,11 +16,13 @@ import Projects from "./pages/projects/projects"
 import ReviewData from "./data/ReviewsData"
 import Contact from "./pages/contact/contact"
 import ScreenSizeWarning from "./pages/screenSizeWarning/screenSizeWarning"
+import CustomApp from "./components/custom/customApp"
 
 import LayoutMobile from "./pages/mobile"
 
 function App() {
 	const screenSize = useScreenSize()
+	const customPopup = useAppSelector((state) => state.global.customPopup)
 
 	const renderRoutes = () => (
 		<>
@@ -85,6 +89,7 @@ function App() {
 					</Route>
 				</Routes>
 			</Router>
+			{customPopup && <CustomApp />}
 		</div>
 	)
 }

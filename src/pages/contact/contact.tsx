@@ -1,3 +1,4 @@
+import { useAppSelector } from "../../types/store.types"
 import { useTranslation } from "react-i18next"
 
 import { useScreenSize } from "../../context/hooks/screenSizeHooks"
@@ -11,28 +12,42 @@ const Contact = () => {
 	const { t } = useTranslation()
 	const screenSize = useScreenSize()
 
+	const customColor = useAppSelector((state) => state.custom)
+
 	return (
 		<div className="containerContact">
 			<div className="containerText">
 				<div className="textFirst">{t("rightSide.contact.title")}</div>
 				<div className="textSecond">
 					{t("rightSide.contact.desc.p1")}{" "}
-					<span className="highlight">
+					<span
+						className="highlight"
+						style={{ color: customColor.primaryColor }}
+					>
 						{t("rightSide.contact.desc.p2")}
 					</span>{" "}
 					{t("rightSide.contact.desc.p3")}{" "}
-					<span className="highlight">
+					<span
+						className="highlight"
+						style={{ color: customColor.primaryColor }}
+					>
 						{t("rightSide.contact.desc.p4")}
 					</span>{" "}
 					{t("rightSide.contact.desc.p5")}
 				</div>
 				<div className="textSecond">
 					{t("rightSide.contact.desc.p6")}{" "}
-					<span className="highlight">
+					<span
+						className="highlight"
+						style={{ color: customColor.primaryColor }}
+					>
 						{t("rightSide.contact.desc.p7")}
 					</span>
 					{t("rightSide.contact.desc.p8")}{" "}
-					<span className="highlight">
+					<span
+						className="highlight"
+						style={{ color: customColor.primaryColor }}
+					>
 						{t("rightSide.contact.desc.p9")}
 					</span>
 					.
