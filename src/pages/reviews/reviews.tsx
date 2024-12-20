@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useAppSelector } from "../../types/store.types"
 import { useTranslation } from "react-i18next"
 
 import { Card, Rate, Button } from "antd"
@@ -13,6 +14,8 @@ const ReviewCard = ({ review }: { review: ReviewProps }) => {
 
 	const [expanded, setExpanded] = useState(false)
 
+	const customColor = useAppSelector((state) => state.custom)
+
 	const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
 		e.preventDefault()
 		window.open(e.currentTarget.href, "_blank")
@@ -25,7 +28,12 @@ const ReviewCard = ({ review }: { review: ReviewProps }) => {
 					{review.picture && (
 						<img className="img" alt="img" src={review.picture} />
 					)}
-					<Rate disabled allowHalf defaultValue={review.rating} />
+					<Rate
+						disabled
+						allowHalf
+						defaultValue={review.rating}
+						style={{ color: customColor.primaryColor }}
+					/>
 				</div>
 				<Card.Meta
 					description={
@@ -40,7 +48,12 @@ const ReviewCard = ({ review }: { review: ReviewProps }) => {
 								onClick={() => setExpanded(!expanded)}
 							>
 								{review.text.length > 150 && (
-									<p className="reviewButtonText">
+									<p
+										className="reviewButtonText"
+										style={{
+											color: customColor.buttonColor,
+										}}
+									>
 										{expanded
 											? t(
 													"rightSide.review.button.showLess",

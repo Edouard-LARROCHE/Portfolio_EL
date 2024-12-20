@@ -1,0 +1,62 @@
+@use "../../scss/config/primitives" as *;
+@use "../../scss/config/functions" as *;
+
+.containerColorPicker {
+	width: 7rem;
+
+	.title {
+		margin: 0 0 0.3rem 0;
+		color: $smoth-white;
+		font-weight: 600;
+		font-size: convertToREM(12);
+	}
+
+	.choice {
+		margin-top: 0;
+		margin-bottom: 1.2rem;
+		display: flex;
+		align-items: center;
+
+		.colorPicker {
+			z-index: 1;
+			margin-right: -2.1rem;
+			padding: 0;
+			width: convertToREM(32);
+			height: convertToREM(32);
+			background: none;
+			border: none;
+			cursor: pointer;
+		}
+
+		.containerInput {
+			padding: 0.4rem 1rem 0.4rem 3rem;
+			min-height: 1rem;
+			background-color: #eeeff4;
+			border-radius: 1.5rem 0 0 1.5rem;
+			color: $brand-black;
+			font-weight: 500;
+			font-size: smaller;
+
+			.inputColor {
+				margin-left: -0.05rem;
+				width: 3.2rem;
+				display: flex;
+				background-color: transparent;
+				border: none;
+				color: $brand-black;
+				font-size: 0.8rem;
+
+				&:focus {
+					outline: none;
+					border: convertToREM(1) $drak-blue solid;
+				}
+			}
+		}
+	}
+}
+
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+	border-radius: 50%;
+}
+

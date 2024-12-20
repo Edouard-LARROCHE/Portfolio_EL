@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useAppSelector } from "../../types/store.types"
 import { useLocation } from "react-router-dom"
 
 import { useScreenSize } from "../../context/hooks/screenSizeHooks"
@@ -11,7 +12,10 @@ const ScrollToTop: React.FC<ActivityProps> = ({ scrollableRef }) => {
 	const screenSize = useScreenSize()
 	const location = useLocation()
 
+	const primaryColor = useAppSelector((state) => state.custom.primaryColor)
+
 	const [isVisible, setIsVisible] = useState(false)
+	const [isHovered, setIsHovered] = useState(false)
 
 	useEffect(() => {
 		if (scrollableRef && scrollableRef.current) {
@@ -47,7 +51,15 @@ const ScrollToTop: React.FC<ActivityProps> = ({ scrollableRef }) => {
 			className={`scrollToTopContainer ${isVisible ? "visible" : ""} ${screenSize === "desktop" && location.pathname === "/home/projects" ? "customPosition" : ""}`}
 			onClick={scrollToTop}
 		>
-			<div className="scrollTop" />
+			<div
+				className="scrollTop"
+				onMouseEnter={() => setIsHovered(true)}
+				onMouseLeave={() => setIsHovered(false)}
+				style={{
+					color: isHovered ? primaryColor : "",
+					borderColor: isHovered ? primaryColor : "",
+				}}
+			/>
 		</div>
 	)
 }

@@ -1,9 +1,12 @@
+import { useState } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
+import { useAppSelector, useAppDispatch } from "../../types/store.types"
 import { useTranslation } from "react-i18next"
 import { Switch, Select } from "antd"
 
 import { useScreenSize } from "../../context/hooks/screenSizeHooks"
 import { useTheme } from "../../context/hooks/themeHooks"
+import { setCustomPopup } from "../../store/slice/global.slice"
 
 import type { PopupProps } from "./types"
 
@@ -32,11 +35,17 @@ const Popup = ({
 	onMouseEnter,
 	onMouseLeave,
 }: PopupProps) => {
+	const dispatch = useAppDispatch()
 	const screenSize = useScreenSize()
 	const { theme, toggleTheme } = useTheme()
 	const navigate = useNavigate()
 	const location = useLocation()
 	const { i18n, t } = useTranslation()
+
+	const customPopupOpen = useAppSelector((state) => state.global.customPopup)
+	const custom = useAppSelector((state) => state.custom)
+
+	const [customPopup, setCustomPopupOpen] = useState(customPopupOpen)
 
 	const changeLanguage = (lng: string) => {
 		i18n.changeLanguage(lng)
@@ -50,6 +59,12 @@ const Popup = ({
 		if (location.pathname !== path) {
 			navigate(path)
 		}
+	}
+
+	const handleCustomPopup = () => {
+		setCustomPopupOpen(!customPopup)
+
+		dispatch(setCustomPopup(!customPopup))
 	}
 
 	const handleClickFollowMe = () => {
@@ -235,8 +250,26 @@ const Popup = ({
 									: t("secondPopup.options.dm.dark")}
 							</span>
 							<Switch
+								style={{
+									backgroundColor:
+										theme === "dark"
+											? custom.primaryColor
+											: custom.buttonColor,
+								}}
 								checked={theme === "dark"}
 								onChange={toggleTheme}
+							/>
+						</div>
+						<div className="containerCustom">
+							<span>{t("Custom")}</span>
+							<Switch
+								style={{
+									backgroundColor: customPopupOpen
+										? custom.primaryColor
+										: custom.buttonColor,
+								}}
+								checked={customPopupOpen}
+								onChange={handleCustomPopup}
 							/>
 						</div>
 						<div className="containerLanguage">

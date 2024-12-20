@@ -16,11 +16,9 @@
 		height: 100%;
 		border: none;
 		border-radius: 0.7rem;
-		background-color: transparent;
 
 		&.active {
 			cursor: default;
-			background-color: $blue-sky-space;
 		}
 
 		.buttonText {
