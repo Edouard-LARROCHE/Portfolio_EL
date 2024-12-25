@@ -30,4 +30,3 @@ const Branded = () => {
 }
 
 export default Branded
-

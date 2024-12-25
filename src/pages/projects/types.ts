@@ -12,4 +12,3 @@ export type ProjectsProps = {
 		languages: Record<string, number>
 	}[]
 }
-

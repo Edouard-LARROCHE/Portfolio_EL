@@ -5,4 +5,3 @@ import { ThemeContext } from "../themeContext"
 export const useTheme = () => {
 	return useContext(ThemeContext)
 }
-

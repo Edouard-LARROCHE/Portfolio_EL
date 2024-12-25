@@ -5,4 +5,3 @@ export type PopupProps = {
 	onMouseLeave: () => void
 	stopPropagation: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }
-

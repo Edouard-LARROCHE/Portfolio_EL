@@ -3,4 +3,3 @@ export type ButtonsProps = {
 	text: string
 	key: number
 }
-

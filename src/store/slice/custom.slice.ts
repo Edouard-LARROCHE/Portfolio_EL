@@ -38,4 +38,3 @@ export const customSlice = createSlice({
 
 export const { setChangeColor, setChangeFont, setReset } = customSlice.actions
 export default customSlice.reducer
-

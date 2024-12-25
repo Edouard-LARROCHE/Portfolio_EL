@@ -51,4 +51,3 @@ const BorderAnim = () => {
 }
 
 export default BorderAnim
-

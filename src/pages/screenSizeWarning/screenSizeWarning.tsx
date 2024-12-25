@@ -20,4 +20,3 @@ const ScreenSizeWarning = () => {
 }
 
 export default ScreenSizeWarning
-

@@ -79,4 +79,3 @@ const LayoutMobile = () => {
 }
 
 export default LayoutMobile
-

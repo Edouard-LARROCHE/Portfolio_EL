@@ -198,4 +198,3 @@ const Activity: React.FC<ActivityProps> = ({ scrollableRef }) => {
 }
 
 export default Activity
-

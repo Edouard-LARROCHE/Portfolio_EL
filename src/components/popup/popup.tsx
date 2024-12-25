@@ -244,11 +244,7 @@ const Popup = ({
 							{t("secondPopup.options.title")}
 						</div>
 						<div className="containerDM">
-							<span>
-								{theme === "light"
-									? t("secondPopup.options.dm.light")
-									: t("secondPopup.options.dm.dark")}
-							</span>
+							<span>{t("secondPopup.options.dm.dark")}</span>
 							<Switch
 								style={{
 									backgroundColor:
@@ -260,18 +256,20 @@ const Popup = ({
 								onChange={toggleTheme}
 							/>
 						</div>
-						<div className="containerCustom">
-							<span>{t("Custom")}</span>
-							<Switch
-								style={{
-									backgroundColor: customPopupOpen
-										? custom.primaryColor
-										: custom.buttonColor,
-								}}
-								checked={customPopupOpen}
-								onChange={handleCustomPopup}
-							/>
-						</div>
+						{screenSize === "desktop" && (
+							<div className="containerCustom">
+								<span>{t("Custom")}</span>
+								<Switch
+									style={{
+										backgroundColor: customPopupOpen
+											? custom.primaryColor
+											: custom.buttonColor,
+									}}
+									checked={customPopupOpen}
+									onChange={handleCustomPopup}
+								/>
+							</div>
+						)}
 						<div className="containerLanguage">
 							<Select
 								defaultValue={i18n.language}
@@ -381,4 +379,3 @@ const Popup = ({
 }
 
 export default Popup
-

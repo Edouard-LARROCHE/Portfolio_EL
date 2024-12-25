@@ -14,4 +14,3 @@ export const globalSlice = createSlice({
 
 export const { setCustomPopup } = globalSlice.actions
 export default globalSlice.reducer
-

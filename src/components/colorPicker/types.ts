@@ -3,4 +3,3 @@ export type ColorPickerProps = {
 	onChange: (color: string) => void
 	label: "Primary" | "Secondary" | "Button" | "Snake"
 }
-

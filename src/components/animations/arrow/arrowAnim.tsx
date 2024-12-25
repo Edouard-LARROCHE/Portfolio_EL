@@ -15,4 +15,3 @@ const ArrowAnim = ({ onClick }: ArrowAnimProps) => {
 }
 
 export default ArrowAnim
-

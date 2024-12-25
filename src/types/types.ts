@@ -8,4 +8,3 @@ export type ReposProps = {
 	html_url: string
 	languages: Record<string, number>
 }[]
-

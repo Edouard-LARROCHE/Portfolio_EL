@@ -133,4 +133,3 @@ const Card = ({ data, loading, updatedProjects, target }: CardProps) => {
 }
 
 export default Card
-

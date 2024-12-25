@@ -5,4 +5,3 @@ const LoaderBar = () => {
 }
 
 export default LoaderBar
-

@@ -65,4 +65,3 @@ const ScrollToTop: React.FC<ActivityProps> = ({ scrollableRef }) => {
 }
 
 export default ScrollToTop
-

@@ -85,4 +85,3 @@ const Projects = ({ repos, loading, scrollableRef }: ProjectsProps) => {
 }
 
 export default Projects
-

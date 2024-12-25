@@ -34,4 +34,3 @@ export const ScreenSizeProvider: React.FC<ScreenSizeProviderProps> = ({
 		</ScreenSizeContext.Provider>
 	)
 }
-

@@ -98,4 +98,3 @@ export const calculateAverageRating = (reviews: any[]) => {
 	)
 	return totalRating / reviews.length
 }
-

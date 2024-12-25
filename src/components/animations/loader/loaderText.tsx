@@ -19,4 +19,3 @@ const LoadingText = (props: loaderTextProps) => {
 }
 
 export default LoadingText
-

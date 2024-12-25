@@ -24,4 +24,3 @@ const CopyRight = () => {
 }
 
 export default CopyRight
-

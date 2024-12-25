@@ -15,4 +15,3 @@ export type ActivityProps = {
 export type ActicityRef = {
 	scrollableRef?: React.RefObject<HTMLDivElement>
 }
-

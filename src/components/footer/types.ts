@@ -9,4 +9,3 @@ export type FooterDataProps = {
 	loadingRepos: boolean
 	repos: any[] | null
 }
-

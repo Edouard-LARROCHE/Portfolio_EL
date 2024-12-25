@@ -89,4 +89,3 @@ const ReviewCard = ({ review }: { review: ReviewProps }) => {
 }
 
 export default ReviewCard
-
