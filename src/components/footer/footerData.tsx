@@ -17,7 +17,7 @@ const FooterData = ({
 	const items = [
 		{
 			title: t("workingData.totalReposTitle"),
-			description: data && data.public_repos + data.total_private_repos,
+			description: data && data.public_repos,
 			extendText: t("workingData.repositories"),
 		},
 		{

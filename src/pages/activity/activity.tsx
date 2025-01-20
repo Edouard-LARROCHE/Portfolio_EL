@@ -61,12 +61,16 @@ const Activity: React.FC<ActivityProps> = ({ scrollableRef }) => {
 				getGithubActivity({
 					userName: import.meta.env.VITE_API_USER_NAME,
 					repoName: repo,
-				}).then((commits) =>
-					commits.map((commit: any) => ({
+				}).then((commits) => {
+					if (!Array.isArray(commits)) {
+						return []
+					}
+
+					return commits.map((commit: any) => ({
 						...commit,
 						projectName: repo,
-					})),
-				),
+					}))
+				}),
 			),
 		)
 			.then((commits) => {
